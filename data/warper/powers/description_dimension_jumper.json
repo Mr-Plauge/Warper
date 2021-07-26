@@ -1,0 +1,5 @@
+{
+  "name": "Dimension Jumper",
+  "description": "You can travel between the Overworld, Nether, and End. Upon activation, there is a delay of 6 seconds before you are teleported. During this time, you are immobilized, inflicted with Blindness, and take increased damage. Press primary ability key to teleport to the next dimension, press secondary ability key to teleport to the previous dimension. 30 second cooldown.",
+  "type": "origins:simple"
+}

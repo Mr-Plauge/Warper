@@ -1,0 +1,37 @@
+{
+  "type": "origins:multiple",
+  "disoriented_damage_taken": {
+    "type": "origins:modify_damage_taken",
+    "modifier": {
+      "value": 0.5,
+      "operation": "multiply_base"
+    },
+    "damage_condition": {
+      "type": "origins:amount",
+      "comparison": ">",
+      "compare_to": 0
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "warper:disoriented_resource",
+      "comparison": ">",
+      "compare_to": 0
+    }
+  },
+  "disoriented_no_milk": {
+    "type": "origins:prevent_item_use",
+    "item_condition": {
+      "type": "origins:ingredient",
+      "ingredient": {
+        "item": "minecraft:milk_bucket"
+      }
+    },
+    "condition": {
+      "type": "origins:resource",
+      "resource": "warper:disoriented_resource",
+      "comparison": ">",
+      "compare_to": 0
+    }
+  },
+  "hidden": true
+}

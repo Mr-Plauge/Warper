@@ -1,0 +1,451 @@
+{
+  "type": "origins:active_self",
+  "entity_action": {
+    "type": "origins:and",
+    "actions": [
+      {
+        "type": "origins:apply_effect",
+        "effect": {
+          "effect": "minecraft:blindness",
+          "duration": 140,
+          "amplifier": 53,
+          "show_icon": false,
+          "show_particles": false
+        }
+      },
+      {
+        "type": "origins:apply_effect",
+        "effect": {
+          "effect": "minecraft:slowness",
+          "duration": 140,
+          "amplifier": 10,
+          "show_icon": false,
+          "show_particles": false
+        }
+      },
+      {
+        "type": "origins:execute_command",
+        "command": "function warper:charge_noise",
+        "permission_level": 4
+      },
+      {
+        "type": "origins:delay",
+        "ticks": 80,
+        "action": {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:health",
+                "comparison": ">",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:status_effect",
+                "effect": "minecraft:slowness",
+                "min_amplifier": 53,
+                "max_amplifier": 53,
+                "inverted": true
+              }
+            ]
+          },
+          "if_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "function warper:teleport_begin_noise",
+                "permission_level": 4
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "effect give @s minecraft:glowing 10 9 true",
+                "permission_level": 4
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "execute positioned ~-3 ~-3 ~-3 as @e[nbt=!{ActiveEffects:[{Id:24b,Amplifier:9b}]},limit=3,dx=5,dy=5,dz=5,type=!minecraft:end_crystal,type=!minecraft:shulker,type=!minecraft:wither,type=!minecraft:ender_dragon,type=!minecraft:armor_stand,type=!minecraft:item,type=!minecraft:item_frame,type=!minecraft:painting,type=!minecraft:egg,type=!minecraft:snowball,type=!minecraft:potion,type=!minecraft:arrow,type=!minecraft:spectral_arrow,type=!minecraft:boat,type=!minecraft:chest_minecart,type=!minecraft:furnace_minecart,type=!minecraft:hopper_minecart,type=!minecraft:tnt_minecart,type=!minecraft:tnt,type=!minecraft:falling_block,type=!minecraft:experience_bottle,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:dragon_fireball,type=!minecraft:firework_rocket,type=!minecraft:leash_knot,type=!minecraft:llama_spit,type=!minecraft:lightning_bolt,type=!minecraft:trident,type=!minecraft:experience_orb] unless data entity @s SleepingX run effect give @s minecraft:glowing 10 9 true",
+                "permission_level": 4
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "origins:delay",
+        "ticks": 112,
+        "action": {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:health",
+                "comparison": ">",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:status_effect",
+                "effect": "minecraft:slowness",
+                "min_amplifier": 53,
+                "max_amplifier": 53,
+                "inverted": true
+              }
+            ]
+          },
+          "if_action": {
+            "type": "origins:execute_command",
+            "command": "playsound minecraft:entity.puffer_fish.blow_up player @s ~ ~ ~ 5 0.1",
+            "permission_level": 4
+          }
+        }
+      },
+      {
+        "type": "origins:delay",
+        "ticks": 115,
+        "action": {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:health",
+                "comparison": ">",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:status_effect",
+                "effect": "minecraft:slowness",
+                "min_amplifier": 53,
+                "max_amplifier": 53,
+                "inverted": true
+              }
+            ]
+          },
+          "if_action": {
+            "type": "origins:execute_command",
+            "command": "execute positioned ~-31 ~-31 ~-31 as @e[nbt={ActiveEffects:[{Id:24b,Amplifier:9b}]},dx=61,dy=61,dz=61,type=!minecraft:end_crystal,type=!minecraft:shulker,type=!minecraft:wither,type=!minecraft:ender_dragon,type=!minecraft:armor_stand,type=!minecraft:item,type=!minecraft:item_frame,type=!minecraft:painting,type=!minecraft:egg,type=!minecraft:snowball,type=!minecraft:potion,type=!minecraft:arrow,type=!minecraft:spectral_arrow,type=!minecraft:boat,type=!minecraft:chest_minecart,type=!minecraft:furnace_minecart,type=!minecraft:hopper_minecart,type=!minecraft:tnt_minecart,type=!minecraft:tnt,type=!minecraft:falling_block,type=!minecraft:experience_bottle,type=!minecraft:fireball,type=!minecraft:small_fireball,type=!minecraft:dragon_fireball,type=!minecraft:firework_rocket,type=!minecraft:leash_knot,type=!minecraft:llama_spit,type=!minecraft:lightning_bolt,type=!minecraft:trident,type=!minecraft:experience_orb] unless data entity @s SleepingX run teleport @s ~31 ~31 ~31",
+            "permission_level": 4
+          }
+        }
+      },
+      {
+        "type": "origins:delay",
+        "ticks": 120,
+        "action": {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:health",
+                "comparison": ">",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:status_effect",
+                "effect": "minecraft:slowness",
+                "min_amplifier": 53,
+                "max_amplifier": 53,
+                "inverted": true
+              }
+            ]
+          },
+          "if_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+              {
+                "condition": {
+                  "type": "origins:dimension",
+                  "dimension": "minecraft:overworld"
+                },
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:execute_command",
+                      "command": "execute as @s at @s run function warper:teleport_end",
+                      "permission_level": 4
+                    }
+                  ]
+                }
+              },
+              {
+                "condition": {
+                  "type": "origins:dimension",
+                  "dimension": "minecraft:the_nether"
+                },
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:execute_command",
+                      "command": "execute as @s at @s run function warper:teleport_overworld",
+                      "permission_level": 4
+                    }
+                  ]
+                }
+              },
+              {
+                "condition": {
+                  "type": "origins:dimension",
+                  "dimension": "minecraft:the_end"
+                },
+                "action": {
+                  "type": "origins:and",
+                  "actions": [
+                    {
+                      "type": "origins:execute_command",
+                      "command": "execute as @s at @s run function warper:teleport_nether",
+                      "permission_level": 4
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "origins:delay",
+        "ticks": 121,
+        "action": {
+          "type": "origins:execute_command",
+          "command": "execute as @s at @s run fill ~-1 ~-1 ~-1 ~1 ~-1 ~1 minecraft:netherrack replace minecraft:lava",
+          "permission_level": 4
+        }
+      },
+      {
+        "type": "origins:delay",
+        "ticks": 121,
+        "action": {
+          "type": "origins:execute_command",
+          "command": "execute as @s at @s run fill ~-1 ~-1 ~-1 ~1 ~-1 ~1 minecraft:grass_block replace #warper:warper_air",
+          "permission_level": 4
+        }
+      },
+      {
+        "type": "origins:delay",
+        "ticks": 121,
+        "action": {
+          "type": "origins:execute_command",
+          "command": "execute as @s at @s run fill ~-1 ~ ~-1 ~1 ~2 ~1 minecraft:air replace #warper:warper_replace",
+          "permission_level": 4
+        }
+      },
+      {
+        "type": "origins:delay",
+        "ticks": 120,
+        "action": {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:health",
+                "comparison": ">",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:status_effect",
+                "effect": "minecraft:slowness",
+                "min_amplifier": 53,
+                "max_amplifier": 53,
+                "inverted": true
+              }
+            ]
+          },
+          "if_action": {
+            "type": "origins:change_resource",
+            "resource": "warper:dimension_jumper_cooldown_resource",
+            "change": -600
+          }
+        }
+      },
+      {
+        "type": "origins:delay",
+        "ticks": 120,
+        "action": {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:health",
+                "comparison": ">",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:status_effect",
+                "effect": "minecraft:slowness",
+                "min_amplifier": 53,
+                "max_amplifier": 53,
+                "inverted": true
+              }
+            ]
+          },
+          "if_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:change_resource",
+                "resource": "warper:disoriented_resource",
+                "change": 200
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "minecraft:blindness",
+                  "duration": 200,
+                  "amplifier": 10,
+                  "show_icon": false,
+                  "show_particles": false
+                }
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "minecraft:glowing",
+                  "duration": 200,
+                  "amplifier": 10,
+                  "show_icon": false,
+                  "show_particles": false
+                }
+              },
+              {
+                "type": "origins:apply_effect",
+                "effect": {
+                  "effect": "minecraft:slowness",
+                  "duration": 200,
+                  "amplifier": 3,
+                  "show_icon": false,
+                  "show_particles": false
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "type": "origins:delay",
+        "ticks": 120,
+        "action": {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:health",
+                "comparison": ">",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:status_effect",
+                "effect": "minecraft:slowness",
+                "min_amplifier": 53,
+                "max_amplifier": 53,
+                "inverted": true
+              }
+            ]
+          },
+          "if_action": {
+            "type": "origins:change_resource",
+            "resource": "warper:fluctuation_level_resource",
+            "change": 1
+          }
+        }
+      },
+      {
+        "type": "origins:delay",
+        "ticks": 121,
+        "action": {
+          "type": "origins:if_else",
+          "condition": {
+            "type": "origins:and",
+            "conditions": [
+              {
+                "type": "origins:health",
+                "comparison": ">",
+                "compare_to": 0
+              },
+              {
+                "type": "origins:status_effect",
+                "effect": "minecraft:slowness",
+                "min_amplifier": 53,
+                "max_amplifier": 53,
+                "inverted": true
+              }
+            ]
+          },
+          "if_action": {
+            "type": "origins:and",
+            "actions": [
+              {
+                "type": "origins:execute_command",
+                "command": "function warper:teleport_noise",
+                "permission_level": 4
+              },
+              {
+                "type": "origins:execute_command",
+                "command": "particle minecraft:end_rod ~ ~1 ~ 0 0 0 0.3 25",
+                "permission_level": 4
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "cooldown": 120,
+  "hud_render": {
+    "sprite_location": "origins:textures/gui/community/spiderkolo/resource_bar_03.png",
+    "bar_index": 9
+  },
+  "condition": {
+    "type": "origins:and",
+    "conditions": [
+      {
+        "type": "origins:status_effect",
+        "effect": "minecraft:blindness",
+        "min_amplifier": 53,
+        "max_amplifier": 53,
+        "inverted": true
+      },
+      {
+        "type": "origins:status_effect",
+        "effect": "minecraft:slowness",
+        "min_amplifier": 53,
+        "max_amplifier": 53,
+        "inverted": true
+      },
+      {
+        "type": "origins:resource",
+        "resource": "warper:dimension_jumper_cooldown_resource",
+        "comparison": ">=",
+        "compare_to": 600
+      },
+      {
+        "type": "origins:resource",
+        "resource": "warper:fluctuation_dimension_jump_resource",
+        "comparison": "<=",
+        "compare_to": 0
+      },
+      {
+        "type": "origins:resource",
+        "resource": "warper:disoriented_resource",
+        "comparison": "<=",
+        "compare_to": 0
+      },
+      {
+        "type": "origins:gamemode",
+        "gamemode": "spectator",
+        "inverted": true
+      }
+    ]
+  },
+  "key": {
+    "key": "key.origins.secondary_active"
+  },
+  "hidden": true
+}

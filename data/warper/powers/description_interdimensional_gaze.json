@@ -1,0 +1,5 @@
+{
+  "name": "Interdimensional",
+  "description": "The positions of nearby players in all three dimensions are displayed around you as particle trails. Does not work if you are inflicted with Blindness or Invisibility.",
+  "type": "origins:simple"
+}

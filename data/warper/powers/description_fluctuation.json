@@ -1,0 +1,5 @@
+{
+  "name": "Fluctuation",
+  "description": "After a successful Dimension Jump, you are inflicted with a chance to teleport to a random dimension at a random time, increasing in likelyhood every subsequent time you use Dimension Jump with a cap of 6 times. Upon randomly teleporting, you take damage and cannot use Dimension Jump for 2 minutes. Damage is dependent on how many times you used Dimension Jump. Chances go back down overtime.",
+  "type": "origins:simple"
+}

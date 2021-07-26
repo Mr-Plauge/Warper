@@ -1,0 +1,16 @@
+{
+  "type": "origins:action_over_time",
+  "entity_action": {
+    "type": "origins:change_resource",
+    "resource": "warper:fluctuation_level_resource",
+    "change": -1
+  },
+  "condition": {
+    "type": "origins:resource",
+    "resource": "warper:fluctuation_level_resource",
+    "comparison": ">=",
+    "compare_to": 0
+  },
+  "interval": 1200,
+  "hidden": true
+}
