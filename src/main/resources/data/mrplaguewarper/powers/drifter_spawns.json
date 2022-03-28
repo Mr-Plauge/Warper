@@ -1,0 +1,20 @@
+{
+    "type": "origins:multiple",
+    "hidden": true,
+    "overworld_spawn": {
+        "type": "origins:modify_player_spawn",
+        "dimension": "minecraft:overworld",
+        "spawn_strategy": "default"
+    },
+    "nether_spawn": {
+        "type": "origins:modify_player_spawn",
+        "dimension": "minecraft:the_nether",
+        "dimension_distance_multiplier": 1,
+        "spawn_strategy": "default"
+    },
+    "end_spawn": {
+        "type": "origins:modify_player_spawn",
+        "dimension": "minecraft:the_end",
+        "spawn_strategy": "default"
+    }
+}

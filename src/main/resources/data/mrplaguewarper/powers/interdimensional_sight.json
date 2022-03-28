@@ -1,0 +1,207 @@
+{
+	"type": "origins:multiple",
+	"name": "Interdimensional Sight",
+	"description": "Press your primary ability key to enter an out-of-body state, conjuring a mental image of your surroundings. Press your mouse keys to switch the viewed dimension. End is not available by default, but becomes accessible upon visiting a stronghold.",
+	"toggle": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "mrplaguewarper:interdimensional_sight_toggle"
+		},
+		"cooldown": 20,
+		"hud_render": {
+			"should_render": true,
+			"sprite_location": "mrplaguewarper:textures/gui/custom/resource_bars/warper.png",
+			"bar_index": 3
+		},
+		"key": {
+			"key": "key.origins.primary_active"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "mrplaguewarper:warp_1_bar",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "mrplaguewarper:warp_2_bar",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "mrplaguewarper:warp_3_bar",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "mrplaguewarper:warp_4_bar",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "mrplaguewarper:warp_5_bar",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "mrplaguewarper:warp_6_bar",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:status_effect",
+					"effect": "mrplaguewarper:overloading",
+					"inverted": true
+				}
+			]
+		}
+	},
+	"cycle_forward": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:advancement",
+				"advancement": "minecraft:story/follow_ender_eye"
+			},
+			"if_action": {
+				"type": "mrplaguewarper:interdimensional_sight_cycle"
+			},
+			"else_action": {
+				"type": "mrplaguewarper:interdimensional_sight_cycle",
+				"limited": true
+			}
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.attack"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "mrplaguewarper:warp_1_bar",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "mrplaguewarper:warp_2_bar",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "mrplaguewarper:warp_3_bar",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "mrplaguewarper:warp_4_bar",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "mrplaguewarper:warp_5_bar",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "mrplaguewarper:warp_6_bar",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:status_effect",
+					"effect": "mrplaguewarper:overloading",
+					"inverted": true
+				}
+			]
+		}
+	},
+	"cycle_backward": {
+		"type": "origins:active_self",
+		"entity_action": {
+			"type": "origins:if_else",
+			"condition": {
+				"type": "origins:advancement",
+				"advancement": "minecraft:story/follow_ender_eye"
+			},
+			"if_action": {
+				"type": "mrplaguewarper:interdimensional_sight_cycle",
+				"reversed": true
+			},
+			"else_action": {
+				"type": "mrplaguewarper:interdimensional_sight_cycle",
+				"limited": true
+			}
+		},
+		"cooldown": 1,
+		"hud_render": {
+			"should_render": false
+		},
+		"key": {
+			"key": "key.use"
+		},
+		"condition": {
+			"type": "origins:and",
+			"conditions": [
+				{
+					"type": "origins:resource",
+					"resource": "mrplaguewarper:warp_1_bar",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "mrplaguewarper:warp_2_bar",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "mrplaguewarper:warp_3_bar",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "mrplaguewarper:warp_4_bar",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "mrplaguewarper:warp_5_bar",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:resource",
+					"resource": "mrplaguewarper:warp_6_bar",
+					"comparison": "==",
+					"compare_to": 0
+				},
+				{
+					"type": "origins:status_effect",
+					"effect": "mrplaguewarper:overloading",
+					"inverted": true
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,36 @@
+{
+    "type": "origins:multiple",
+    "hidden": true,
+    "bar": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 64,
+        "start_value": 64,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "mrplaguewarper:textures/gui/custom/resource_bars/warper.png",
+            "bar_index": 0,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "mrplaguewarper:energy_source_bar",
+                "comparison": "<",
+                "compare_to": 64
+            }
+        }
+    },
+    "bar_recharge": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "mrplaguewarper:energy_source_bar",
+            "change": 2
+        },
+        "interval": 20,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mrplaguewarper:energy_source_bar",
+            "comparison": "<",
+            "compare_to": 64
+        }
+    }
+}

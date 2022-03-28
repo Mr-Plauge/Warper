@@ -1,0 +1,210 @@
+{
+    "type": "origins:multiple",
+	"name": "Fluctuation",
+	"description": "You experience a brief fluctuation in energy when attacked by entities, damaging you and preventing you from accessing interdimensional sight and warp network. After teleporting to a warp point, you fluctuate and gain a charge of energy that deals 5 hearts of true damage to the first entity you attack.",
+    "fluctuation": {
+        "type": "origins:action_when_damage_taken",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:damage",
+                    "amount": 2,
+                    "source": {
+                        "name": "fluctuation",
+                        "bypasses_armor": true,
+                        "unblockable": true
+                    }
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "mrplaguewarper:overloading",
+                        "duration": 60,
+                        "amplifier": 0
+                    }
+                },
+                {
+                    "type": "mrplaguewarper:interdimensional_sight_toggle",
+                    "disable": true
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "mrplaguewarper:warp_1_bar",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "mrplaguewarper:warp_2_bar",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "mrplaguewarper:warp_3_bar",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "mrplaguewarper:warp_4_bar",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "mrplaguewarper:warp_5_bar",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:change_resource",
+                    "resource": "mrplaguewarper:warp_6_bar",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "mrplaguewarper:adaptive_dimension_bar",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "particle mrplaguewarper:overworld_atom_reverse ~ ~1 ~ 0 0 0 8 8"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "mrplaguewarper:adaptive_dimension_bar",
+                                "comparison": "==",
+                                "compare_to": 2
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "particle mrplaguewarper:nether_atom_reverse ~ ~1 ~ 0 0 0 8 8"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "mrplaguewarper:adaptive_dimension_bar",
+                                "comparison": "==",
+                                "compare_to": 3
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "particle mrplaguewarper:end_atom_reverse ~ ~1 ~ 0 0 0 8 8"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "cooldown": 1,
+        "damage_condition": {
+            "type": "origins:attacker"
+        }
+    },
+    "charge": {
+        "type": "origins:action_on_hit",
+        "bientity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:actor_action",
+                    "action": {
+                        "type": "origins:clear_effect",
+                        "effect": "mrplaguewarper:imminence"
+                    }
+                },
+                {
+                    "type": "origins:target_action",
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:damage",
+                                "amount": 10,
+                                "source": {
+                                    "name": "fluctuation",
+                                    "bypasses_armor": true,
+                                    "unblockable": true
+                                }
+                            },
+                            {
+                                "type": "origins:apply_effect",
+                                "effect": {
+                                    "effect": "minecraft:slowness",
+                                    "duration": 20,
+                                    "amplifier": 2
+                                }
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "mrplaguewarper:warper.cleave",
+                                "volume": 1,
+                                "pitch": 1
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "mrplaguewarper:warper.crackle",
+                                "volume": 1,
+                                "pitch": 1
+                            },
+                            {
+                                "type": "origins:if_else_list",
+                                "actions": [
+                                    {
+                                        "condition": {
+                                            "type": "origins:dimension",
+                                            "dimension": "minecraft:overworld"
+                                        },
+                                        "action": {
+                                            "type": "origins:execute_command",
+                                            "command": "particle mrplaguewarper:overworld_atom_reverse ~ ~1 ~ 0 0 0 8 8"
+                                        }
+                                    },
+                                    {
+                                        "condition": {
+                                            "type": "origins:dimension",
+                                            "dimension": "minecraft:the_nether"
+                                        },
+                                        "action": {
+                                            "type": "origins:execute_command",
+                                            "command": "particle mrplaguewarper:nether_atom_reverse ~ ~1 ~ 0 0 0 8 8"
+                                        }
+                                    },
+                                    {
+                                        "condition": {
+                                            "type": "origins:dimension",
+                                            "dimension": "minecraft:the_end"
+                                        },
+                                        "action": {
+                                            "type": "origins:execute_command",
+                                            "command": "particle mrplaguewarper:end_atom_reverse ~ ~1 ~ 0 0 0 8 8"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        },
+        "condition": {
+            "type": "origins:status_effect",
+            "effect": "mrplaguewarper:imminence"
+        }
+    }
+}

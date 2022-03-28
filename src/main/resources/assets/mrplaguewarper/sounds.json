@@ -1,0 +1,98 @@
+{
+  "warper.arrive": {
+    "category": "player",
+    "subtitle": "subtitles.mrplaguewarper.warper.arrive",
+    "sounds": [
+      "mrplaguewarper:warper/arrive"
+    ]
+  },
+  "warper.cleave": {
+    "category": "player",
+    "subtitle": "subtitles.mrplaguewarper.warper.cleave",
+    "sounds": [
+      "mrplaguewarper:warper/cleave_1",
+      "mrplaguewarper:warper/cleave_2",
+      "mrplaguewarper:warper/cleave_3"
+    ]
+  },
+  "warper.crackle": {
+    "category": "player",
+    "subtitle": "subtitles.mrplaguewarper.warper.crackle",
+    "sounds": [
+      "mrplaguewarper:warper/crackle_1",
+      "mrplaguewarper:warper/crackle_2"
+    ]
+  },
+  "warper.hurt": {
+    "category": "player",
+    "subtitle": "subtitles.mrplaguewarper.warper.hurt",
+    "sounds": [
+      "mrplaguewarper:warper/hurt_1",
+      "mrplaguewarper:warper/hurt_2",
+      "mrplaguewarper:warper/hurt_3"
+    ]
+  },
+  "warper.idle": {
+    "category": "player",
+    "subtitle": "subtitles.mrplaguewarper.warper.idle",
+    "sounds": [
+      "mrplaguewarper:warper/idle_1",
+      "mrplaguewarper:warper/idle_2",
+      "mrplaguewarper:warper/idle_3",
+      "mrplaguewarper:warper/idle_4"
+    ]
+  },
+  "warper.killed": {
+    "category": "player",
+    "subtitle": "subtitles.mrplaguewarper.warper.killed",
+    "sounds": [
+      "mrplaguewarper:warper/killed_1",
+      "mrplaguewarper:warper/killed_2"
+    ]
+  },
+  "warper.relocate": {
+    "category": "player",
+    "subtitle": "subtitles.mrplaguewarper.warper.relocate",
+    "sounds": [
+      "mrplaguewarper:warper/relocate"
+    ]
+  },
+  "warper.reorient": {
+    "category": "player",
+    "subtitle": "subtitles.mrplaguewarper.warper.reorient",
+    "sounds": [
+      "mrplaguewarper:warper/reorient_1",
+      "mrplaguewarper:warper/reorient_2",
+      "mrplaguewarper:warper/reorient_3",
+      "mrplaguewarper:warper/reorient_4",
+      "mrplaguewarper:warper/reorient_5",
+      "mrplaguewarper:warper/reorient_6"
+    ]
+  },
+  "warper.retreat": {
+    "category": "player",
+    "subtitle": "subtitles.mrplaguewarper.warper.retreat",
+    "sounds": [
+      "mrplaguewarper:warper/retreat_1",
+      "mrplaguewarper:warper/retreat_2",
+      "mrplaguewarper:warper/retreat_3"
+    ]
+  },
+  "warper.transmit": {
+    "category": "player",
+    "subtitle": "subtitles.mrplaguewarper.warper.transmit",
+    "sounds": [
+      "mrplaguewarper:warper/transmit_1",
+      "mrplaguewarper:warper/transmit_2"
+    ]
+  },
+  "warper.warp": {
+    "category": "player",
+    "subtitle": "subtitles.mrplaguewarper.warper.warp",
+    "sounds": [
+      "mrplaguewarper:warper/warp_1",
+      "mrplaguewarper:warper/warp_2",
+      "mrplaguewarper:warper/warp_3"
+    ]
+  }
+}

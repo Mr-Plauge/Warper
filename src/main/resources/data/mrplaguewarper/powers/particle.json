@@ -1,0 +1,37 @@
+{
+    "type": "origins:multiple",
+    "hidden": true,
+    "overworld_particle": {
+        "type": "origins:particle",
+        "particle": "mrplaguewarper:overworld_atom",
+        "frequency": 4,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mrplaguewarper:adaptive_dimension_bar",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "nether_particle": {
+        "type": "origins:particle",
+        "particle": "mrplaguewarper:nether_atom",
+        "frequency": 4,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mrplaguewarper:adaptive_dimension_bar",
+            "comparison": "==",
+            "compare_to": 2
+        }
+    },
+    "end_particle": {
+        "type": "origins:particle",
+        "particle": "mrplaguewarper:end_atom",
+        "frequency": 4,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mrplaguewarper:adaptive_dimension_bar",
+            "comparison": "==",
+            "compare_to": 3
+        }
+    }
+}

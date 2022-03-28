@@ -1,0 +1,124 @@
+{
+    "type": "origins:multiple",
+    "hidden": true,
+    "mining_speed": {
+        "type": "origins:modify_break_speed",
+        "modifier": {
+            "operation": "multiply_total",
+            "value": 0.6
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mrplaguewarper:adaptive_dimension_bar",
+            "comparison": "==",
+            "compare_to": 2
+        }
+    },
+    "fire_damage_decrease": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:fire"
+        },
+        "modifier": {
+            "operation": "addition",
+            "value": -5
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mrplaguewarper:adaptive_dimension_bar",
+            "comparison": "==",
+            "compare_to": 2
+        }
+    },
+    "damage_increase": {
+        "type": "origins:modify_damage_taken",
+        "modifier": {
+            "operation": "addition",
+            "value": 2
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mrplaguewarper:adaptive_dimension_bar",
+            "comparison": "==",
+            "compare_to": 2
+        }
+    },
+    "water_damage": {
+        "type": "origins:damage_over_time",
+        "interval": 20,
+        "onset_delay": 1,
+        "damage": 4,
+        "damage_easy": 2,
+        "damage_source": {
+            "name": "hurt_by_water",
+            "unblockable": true,
+            "bypasses_armor": true
+        },
+        "protection_enchantment": "origins:water_protection",
+        "protection_effectiveness": 1.0,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:fluid_height",
+                            "fluid": "minecraft:water",
+                            "comparison": ">",
+                            "compare_to": 0.0
+                        },
+                        {
+                            "type": "origins:in_rain"
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "mrplaguewarper:adaptive_dimension_bar",
+                    "comparison": "==",
+                    "compare_to": 2
+                }
+            ]
+        }
+    },
+    "carnivore": {  
+        "type": "origins:prevent_item_use",
+        "item_condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:ingredient",
+                            "ingredient": {
+                                "tag": "origins:meat"
+                            }
+                        },
+                        {
+                            "type": "origins:meat"
+                        }
+                    ],
+                    "inverted": true
+                },
+                {
+                    "type": "origins:food"
+                },
+                {
+                    "type": "origins:ingredient",
+                    "ingredient": {
+                        "tag": "origins:ignore_diet"
+                    },
+                    "inverted": true
+                }
+            ]
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mrplaguewarper:adaptive_dimension_bar",
+            "comparison": "==",
+            "compare_to": 2
+        }
+    }
+}

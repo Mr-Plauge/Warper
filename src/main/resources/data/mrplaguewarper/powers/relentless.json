@@ -1,0 +1,451 @@
+{
+    "type": "origins:multiple",
+	"name": "Relentless",
+	"description": "You can move in ways that others would consider unnatural. Hold crouch while sprinting to slide, jump while adjacent to a wall to leap off of it. You cannot slide or walljump while starving.",
+    "activate_crawl": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "mrplaguewarper:relentless_crawl_bar",
+            "change": 5
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.sneak",
+            "continuous": true
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:on_block"
+                },
+                {
+                    "type": "origins:food_level",
+                    "comparison": ">",
+                    "compare_to": 6
+                },
+                {
+                    "type": "origins:fall_flying",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:creative_flying",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:gamemode",
+                    "gamemode": "spectator",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:sprinting"
+                }
+            ]
+        }
+    },
+    "activate_slide": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "mrplaguewarper:relentless_slide_bar",
+            "change": 5
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.sneak",
+            "continuous": true
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:food_level",
+                    "comparison": ">",
+                    "compare_to": 6
+                },
+                {
+                    "type": "origins:fall_flying",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:creative_flying",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:gamemode",
+                    "gamemode": "spectator",
+                    "inverted": true
+                },
+                {    
+                    "type": "origins:resource",
+                    "resource": "mrplaguewarper:relentless_slide_cooldown_bar",
+                    "comparison": "==",
+                    "compare_to": 1
+                },
+                {    
+                    "type": "origins:resource",
+                    "resource": "mrplaguewarper:relentless_slide_display_bar",
+                    "comparison": "==",
+                    "compare_to": 40
+                },
+                {  
+                    "type": "origins:sprinting"
+                }
+            ]
+        }
+    },
+    "slide": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:add_velocity",
+                    "y": -0.2,
+                    "space": "world",
+                    "set": true
+                },
+                {
+                    "type": "origins:add_velocity",
+                    "z": 1.4,
+                    "space": "local"
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.witch.throw",
+                    "volume": 1,
+                    "pitch": 0.7
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:block.grindstone.use",
+                    "volume": 1,
+                    "pitch": 0.6
+                },
+                {      
+                    "type": "origins:change_resource",
+                    "resource": "mrplaguewarper:relentless_slide_cooldown_bar",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {      
+                    "type": "origins:change_resource",
+                    "resource": "mrplaguewarper:relentless_slide_display_bar",
+                    "change": 0,
+                    "operation": "set"
+                },
+                {      
+                    "type": "origins:change_resource",
+                    "resource": "mrplaguewarper:relentless_slide_bar",
+                    "change": 0,
+                    "operation": "set"
+                }
+            ]
+        },
+        "interval": 1,
+        "hud_render": {
+            "should_render": false
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:on_block"
+                },
+                {
+                    "type": "origins:food_level",
+                    "comparison": ">",
+                    "compare_to": 6
+                },
+                {
+                    "type": "origins:fall_flying",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:creative_flying",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:gamemode",
+                    "gamemode": "spectator",
+                    "inverted": true
+                },
+                {     
+                    "type": "origins:resource",
+                    "resource": "mrplaguewarper:relentless_slide_bar",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        }
+    },
+    "crawl": {
+        "type": "origins:swimming",
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "mrplaguewarper:relentless_crawl_bar",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {  
+                    "type": "origins:sneaking"
+                }
+            ]
+        }
+    },
+    "walljump": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:add_velocity",
+                    "y": 0.4,
+                    "space": "world",
+                    "set": true
+                },
+                {
+                    "type": "origins:add_velocity",
+                    "z": 0.5,
+                    "space": "local"
+                },
+                {
+                    "type": "origins:play_sound",
+                    "sound": "minecraft:entity.witch.throw",
+                    "volume": 1,
+                    "pitch": 0.6
+                }
+            ]
+        },
+        "cooldown": 40,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "mrplaguewarper:textures/gui/custom/resource_bars/warper.png",
+            "bar_index": 4
+        },
+        "key": {
+            "key": "key.jump"
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:in_block_anywhere",
+                            "block_condition": {
+                                "type": "origins:offset",
+                                "condition": {
+                                    "type": "origins:movement_blocking"
+                                },
+                                "x": 1
+                            }
+                        },
+                        {
+                            "type": "origins:in_block_anywhere",
+                            "block_condition": {
+                                "type": "origins:offset",
+                                "condition": {
+                                    "type": "origins:movement_blocking"
+                                },
+                                "x": -1
+                            }
+                        },
+                        {
+                            "type": "origins:in_block_anywhere",
+                            "block_condition": {
+                                "type": "origins:offset",
+                                "condition": {
+                                    "type": "origins:movement_blocking"
+                                },
+                                "z": 1
+                            }
+                        },
+                        {
+                            "type": "origins:in_block_anywhere",
+                            "block_condition": {
+                                "type": "origins:offset",
+                                "condition": {
+                                    "type": "origins:movement_blocking"
+                                },
+                                "z": -1
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:on_block",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:food_level",
+                    "comparison": ">",
+                    "compare_to": 6
+                },
+                {    
+                    "type": "origins:fall_flying",
+                    "inverted": true
+                },
+                {         
+                    "type": "origins:creative_flying",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:gamemode",
+                    "gamemode": "spectator",
+                    "inverted": true
+                }
+            ]
+        }
+    },
+    "crawl_bar": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 6,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "crawl_bar_drain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "mrplaguewarper:relentless_crawl_bar",
+            "change": -1
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mrplaguewarper:relentless_crawl_bar",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+    "slide_bar": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 6,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "slide_bar_drain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "mrplaguewarper:relentless_slide_bar",
+            "change": -1
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mrplaguewarper:relentless_slide_bar",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+    "slide_cooldown_bar": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 1,
+        "start_value": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "slide_cooldown_bar_recharge": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "mrplaguewarper:relentless_slide_cooldown_bar",
+            "change": 1
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:sneaking",
+                    "inverted": true
+                },
+                {      
+                    "type": "origins:resource",
+                    "resource": "mrplaguewarper:relentless_slide_cooldown_bar",
+                    "comparison": "<",
+                    "compare_to": 1
+                }
+            ]
+        }
+    },
+    "slide_display_bar": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 40,
+        "start_value": 40,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "mrplaguewarper:textures/gui/custom/resource_bars/warper.png",
+            "bar_index": 5,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "mrplaguewarper:relentless_slide_display_bar",
+                "comparison": "<",
+                "compare_to": 40
+            }
+        }
+    },
+    "slide_display_bar_recharge": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "mrplaguewarper:relentless_slide_display_bar",
+            "change": 1
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mrplaguewarper:relentless_slide_display_bar",
+            "comparison": "<",
+            "compare_to": 40
+        }
+    },
+    "land_swim_speed": {
+        "type": "origins:modify_swim_speed",
+        "modifier": {
+            "operation": "addition",
+            "value": -0.03
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:submerged_in",
+                    "fluid": "minecraft:water",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "mrplaguewarper:relentless_crawl_bar",
+                    "comparison": ">",
+                    "compare_to": 0
+                },
+                {  
+                    "type": "origins:sneaking"
+                }
+            ]
+        }
+    }
+}

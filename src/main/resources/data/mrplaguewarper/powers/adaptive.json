@@ -1,0 +1,269 @@
+{
+    "type": "origins:multiple",
+	"name": "Adaptive",
+	"description": "Your body quickly evolves to fit your current dimension. Staying in the overworld increases walking and swimming speeds, but increases hunger drain and fire damage. Staying in the nether increases mining speed and fire resistance, but increases damage taken, makes water damaging, and restricts your diet to meat. Staying in the end increases air speed and fall resistance, but reduces mining speed, makes both fire and water more harmful, and limits your diet to plants.",
+    "dimension_bar": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 3,
+        "start_value": 1,
+        "hud_render": {
+            "should_render": false
+        }
+    },
+    "events": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "mrplaguewarper:adaptive_switch_bar",
+                        "comparison": "==",
+                        "compare_to": 3
+                    },
+                    "action": {
+                        "type": "origins:play_sound",
+                        "sound": "minecraft:block.chorus_flower.death",
+                        "volume": 1,
+                        "pitch": 1
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "mrplaguewarper:adaptive_switch_bar",
+                        "comparison": "==",
+                        "compare_to": 0
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.beacon.power_select",
+                                "volume": 1,
+                                "pitch": 1
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "minecraft:block.chorus_flower.grow",
+                                "volume": 1,
+                                "pitch": 1
+                            },
+                            {
+                                "type": "origins:if_else_list",
+                                "actions": [
+                                    {
+                                        "condition": {
+                                            "type": "origins:dimension",
+                                            "dimension": "minecraft:overworld"
+                                        },
+                                        "action": {
+                                            "type": "origins:change_resource",
+                                            "resource": "mrplaguewarper:adaptive_dimension_bar",
+                                            "change": 1,
+                                            "operation": "set"
+                                        }
+                                    },
+                                    {
+                                        "condition": {
+                                            "type": "origins:dimension",
+                                            "dimension": "minecraft:the_nether"
+                                        },
+                                        "action": {
+                                            "type": "origins:change_resource",
+                                            "resource": "mrplaguewarper:adaptive_dimension_bar",
+                                            "change": 2,
+                                            "operation": "set"
+                                        }
+                                    },
+                                    {
+                                        "condition": {
+                                            "type": "origins:dimension",
+                                            "dimension": "minecraft:the_end"
+                                        },
+                                        "action": {
+                                            "type": "origins:change_resource",
+                                            "resource": "mrplaguewarper:adaptive_dimension_bar",
+                                            "change": 3,
+                                            "operation": "set"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mrplaguewarper:adaptive_switch_bar",
+            "comparison": "<",
+            "compare_to": 120
+        }
+    },
+    "switch_bar": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 120,
+        "start_value": 120,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "mrplaguewarper:textures/gui/custom/resource_bars/warper.png",
+            "bar_index": 1,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "mrplaguewarper:adaptive_switch_bar",
+                "comparison": "<",
+                "compare_to": 120
+            }
+        }
+    },
+    "switch_bar_drain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "mrplaguewarper:adaptive_switch_bar",
+            "change": -1
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {       
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:dimension",
+                                    "dimension": "minecraft:overworld",
+                                    "inverted": true
+                                },
+                                {        
+                                    "type": "origins:resource",
+                                    "resource": "mrplaguewarper:adaptive_dimension_bar",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:dimension",
+                                    "dimension": "minecraft:the_nether",
+                                    "inverted": true
+                                },
+                                {        
+                                    "type": "origins:resource",
+                                    "resource": "mrplaguewarper:adaptive_dimension_bar",
+                                    "comparison": "==",
+                                    "compare_to": 2
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:dimension",
+                                    "dimension": "minecraft:the_end",
+                                    "inverted": true
+                                },
+                                {        
+                                    "type": "origins:resource",
+                                    "resource": "mrplaguewarper:adaptive_dimension_bar",
+                                    "comparison": "==",
+                                    "compare_to": 3
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "mrplaguewarper:adaptive_switch_bar",
+                    "comparison": ">",
+                    "compare_to": 0
+                }
+            ]
+        }
+    },
+    "switch_bar_recharge": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:change_resource",
+            "resource": "mrplaguewarper:adaptive_switch_bar",
+            "change": 1
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {       
+                    "type": "origins:or",
+                    "conditions": [
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:dimension",
+                                    "dimension": "minecraft:overworld"
+                                },
+                                {        
+                                    "type": "origins:resource",
+                                    "resource": "mrplaguewarper:adaptive_dimension_bar",
+                                    "comparison": "==",
+                                    "compare_to": 1
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:dimension",
+                                    "dimension": "minecraft:the_nether"
+                                },
+                                {        
+                                    "type": "origins:resource",
+                                    "resource": "mrplaguewarper:adaptive_dimension_bar",
+                                    "comparison": "==",
+                                    "compare_to": 2
+                                }
+                            ]
+                        },
+                        {
+                            "type": "origins:and",
+                            "conditions": [
+                                {
+                                    "type": "origins:dimension",
+                                    "dimension": "minecraft:the_end"
+                                },
+                                {        
+                                    "type": "origins:resource",
+                                    "resource": "mrplaguewarper:adaptive_dimension_bar",
+                                    "comparison": "==",
+                                    "compare_to": 3
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "mrplaguewarper:adaptive_switch_bar",
+                    "comparison": "<",
+                    "compare_to": 120
+                }
+            ]
+        }
+    }
+}

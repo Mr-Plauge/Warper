@@ -1,0 +1,3 @@
+power revoke @s mrplaguewarper:drifter_spawns_overworld_spawn
+power revoke @s mrplaguewarper:drifter_spawns_nether_spawn
+power revoke @s mrplaguewarper:drifter_spawns_end_spawn

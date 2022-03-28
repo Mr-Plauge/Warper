@@ -1,5 +1,0 @@
-{
-  "name": "Pull",
-  "description": "When teleporting through dimensions, 3 nearby entities are brought with you. Boss entities are not teleportable.",
-  "type": "origins:simple"
-}

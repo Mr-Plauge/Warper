@@ -1,0 +1,265 @@
+{
+    "type": "origins:multiple",
+    "hidden": true,
+    "initialize": {
+        "type": "origins:active_self",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "mrplaguewarper:warp_4_bar",
+                    "change": 20,
+                    "operation": "set"
+                },
+                {
+                    "type": "mrplaguewarper:indexed_sound",
+                    "index": 3
+                },
+                {
+                    "type": "origins:apply_effect",
+                    "effect": {
+                        "effect": "minecraft:slowness",
+                        "duration": 20,
+                        "amplifier": 2
+                    }
+                }
+            ]
+        },
+        "cooldown": 1,
+        "hud_render": {
+            "should_render": false
+        },
+        "key": {
+            "key": "key.hotbar.4"
+        },
+        "condition": {
+            "type": "origins:and",
+            "conditions": [
+                {
+                    "type": "origins:resource",
+                    "resource": "mrplaguewarper:warp_1_bar",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "mrplaguewarper:warp_2_bar",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "mrplaguewarper:warp_3_bar",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "mrplaguewarper:warp_4_bar",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "mrplaguewarper:warp_5_bar",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "mrplaguewarper:warp_6_bar",
+                    "comparison": "==",
+                    "compare_to": 0
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "mrplaguewarper:energy_source_bar",
+                    "comparison": ">=",
+                    "compare_to": 12
+                },
+                {
+                    "type": "origins:status_effect",
+                    "effect": "mrplaguewarper:overloading",
+                    "inverted": true
+                },
+                {
+                    "type": "origins:resource",
+                    "resource": "mrplaguewarper:warp_network_bar",
+                    "comparison": "==",
+                    "compare_to": 1
+                }
+            ]
+        }
+    },
+    "teleport_sequence": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "mrplaguewarper:warp_4_bar",
+                        "comparison": "==",
+                        "compare_to": 2
+                    },
+                    "action": {
+                        "type": "mrplaguewarper:warp_point",
+                        "index": 4
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:resource",
+                        "resource": "mrplaguewarper:warp_4_bar",
+                        "comparison": "==",
+                        "compare_to": 1
+                    },
+                    "action": {
+                        "type": "origins:and",
+                        "actions": [
+                            {
+                                "type": "origins:change_resource",
+                                "resource": "mrplaguewarper:energy_source_bar",
+                                "change": -16
+                            },
+                            {
+                                "type": "origins:play_sound",
+                                "sound": "mrplaguewarper:warper.arrive",
+                                "volume": 1,
+                                "pitch": 1
+                            },
+                            {
+                                "type": "origins:if_else_list",
+                                "actions": [
+                                    {
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "mrplaguewarper:adaptive_dimension_bar",
+                                            "comparison": "==",
+                                            "compare_to": 1
+                                        },
+                                        "action": {
+                                            "type": "origins:execute_command",
+                                            "command": "particle mrplaguewarper:overworld_atom_reverse ~ ~1 ~ 0 0 0 4 30"
+                                        }
+                                    },
+                                    {
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "mrplaguewarper:adaptive_dimension_bar",
+                                            "comparison": "==",
+                                            "compare_to": 2
+                                        },
+                                        "action": {
+                                            "type": "origins:execute_command",
+                                            "command": "particle mrplaguewarper:nether_atom_reverse ~ ~1 ~ 0 0 0 4 30"
+                                        }
+                                    },
+                                    {
+                                        "condition": {
+                                            "type": "origins:resource",
+                                            "resource": "mrplaguewarper:adaptive_dimension_bar",
+                                            "comparison": "==",
+                                            "compare_to": 3
+                                        },
+                                        "action": {
+                                            "type": "origins:execute_command",
+                                            "command": "particle mrplaguewarper:end_atom_reverse ~ ~1 ~ 0 0 0 4 30"
+                                        }
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mrplaguewarper:warp_4_bar",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    },
+    "bar": {
+        "type": "origins:resource",
+        "min": 0,
+        "max": 20,
+        "start_value": 0,
+        "hud_render": {
+            "should_render": true,
+            "sprite_location": "mrplaguewarper:textures/gui/custom/resource_bars/warper.png",
+            "bar_index": 2,
+            "condition": {
+                "type": "origins:resource",
+                "resource": "mrplaguewarper:warp_4_bar",
+                "comparison": ">",
+                "compare_to": 0
+            }
+        }
+    },
+    "bar_drain": {
+        "type": "origins:action_over_time",
+        "entity_action": {
+            "type": "origins:and",
+            "actions": [
+                {
+                    "type": "origins:change_resource",
+                    "resource": "mrplaguewarper:warp_4_bar",
+                    "change": -1
+                },
+                {
+                    "type": "origins:if_else_list",
+                    "actions": [
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "mrplaguewarper:adaptive_dimension_bar",
+                                "comparison": "==",
+                                "compare_to": 1
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "particle mrplaguewarper:overworld_atom ~ ~1 ~ 0 0 0 1 3"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "mrplaguewarper:adaptive_dimension_bar",
+                                "comparison": "==",
+                                "compare_to": 2
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "particle mrplaguewarper:nether_atom ~ ~1 ~ 0 0 0 1 3"
+                            }
+                        },
+                        {
+                            "condition": {
+                                "type": "origins:resource",
+                                "resource": "mrplaguewarper:adaptive_dimension_bar",
+                                "comparison": "==",
+                                "compare_to": 3
+                            },
+                            "action": {
+                                "type": "origins:execute_command",
+                                "command": "particle mrplaguewarper:end_atom ~ ~1 ~ 0 0 0 1 3"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "interval": 1,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mrplaguewarper:warp_4_bar",
+            "comparison": ">",
+            "compare_to": 0
+        }
+    }
+}

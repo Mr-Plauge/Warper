@@ -1,0 +1,61 @@
+{
+    "type": "origins:multiple",
+    "hidden": true,
+    "running_speed": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.movement_speed",
+            "value": 0.2,
+            "operation": "multiply_base"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mrplaguewarper:adaptive_dimension_bar",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "swimming_speed": {
+        "type": "origins:modify_swim_speed",
+        "modifier": {
+            "operation": "multiply_base",
+            "value": 0.3
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mrplaguewarper:adaptive_dimension_bar",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "hunger_drain_increase": {
+        "type": "origins:modify_exhaustion",
+        "modifier": {
+            "operation": "multiply_base",
+            "value": 0.3
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mrplaguewarper:adaptive_dimension_bar",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    },
+    "fire_damage_increase": {
+        "type": "origins:modify_damage_taken",
+        "damage_condition": {
+            "type": "origins:fire"
+        },
+        "modifier": {
+            "operation": "multiply_base",
+            "value": 0.5
+        },
+        "condition": {
+            "type": "origins:resource",
+            "resource": "mrplaguewarper:adaptive_dimension_bar",
+            "comparison": "==",
+            "compare_to": 1
+        }
+    }
+}

@@ -1,0 +1,111 @@
+{
+    "type": "origins:action_on_callback",
+	"name": "Drifter",
+	"description": "You do not belong to a single dimension, causing your natural spawnpoint to randomly switch between the ones you have access to.",
+    "entity_action_respawned": {
+        "type": "origins:if_else",
+        "condition": {
+            "type": "origins:advancement",
+            "advancement": "minecraft:story/enter_the_end" 
+        },
+        "if_action": {
+            "type": "origins:if_else_list",
+            "actions": [
+                {
+                    "condition": {
+                        "type": "origins:dimension",
+                        "dimension": "minecraft:overworld"
+                    },
+                    "action": {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "function mrplaguewarper:nether_spawn"
+                                },
+                                "weight": 1
+                            },
+                            {
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "function mrplaguewarper:end_spawn"
+                                },
+                                "weight": 1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:dimension",
+                        "dimension": "minecraft:the_nether"
+                    },
+                    "action": {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "function mrplaguewarper:overworld_spawn"
+                                },
+                                "weight": 1
+                            },
+                            {
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "function mrplaguewarper:end_spawn"
+                                },
+                                "weight": 1
+                            }
+                        ]
+                    }
+                },
+                {
+                    "condition": {
+                        "type": "origins:dimension",
+                        "dimension": "minecraft:the_end"
+                    },
+                    "action": {
+                        "type": "origins:choice",
+                        "actions": [
+                            {
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "function mrplaguewarper:overworld_spawn"
+                                },
+                                "weight": 1
+                            },
+                            {
+                                "element": {
+                                    "type": "origins:execute_command",
+                                    "command": "function mrplaguewarper:nether_spawn"
+                                },
+                                "weight": 1
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "else_action": {
+            "type": "origins:if_else",
+            "condition": {
+                "type": "origins:dimension",
+                "dimension": "minecraft:overworld"
+            },
+            "if_action": {
+                "type": "origins:execute_command",
+                "command": "function mrplaguewarper:nether_spawn"
+            },
+            "else_action": {
+                "type": "origins:execute_command",
+                "command": "function mrplaguewarper:overworld_spawn"
+            }
+        }
+    },
+    "entity_action_lost": {
+        "type": "origins:execute_command",
+        "command": "function mrplaguewarper:no_spawn"
+    }
+}

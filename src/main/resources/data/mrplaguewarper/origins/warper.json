@@ -1,0 +1,32 @@
+{
+  "name": "Warper",
+  "description": "Tuned into the fabric that binds worlds together, Warpers are capable of travelling through dimensions.",
+  "icon": {
+      "item": "minecraft:crying_obsidian"
+  },
+  "impact": 3,
+  "order": 32,
+  "powers": [
+      "mrplaguewarper:interdimensional_sight",
+      "mrplaguewarper:warp_network",
+      "mrplaguewarper:warp_1",
+      "mrplaguewarper:warp_2",
+      "mrplaguewarper:warp_3",
+      "mrplaguewarper:warp_4",
+      "mrplaguewarper:warp_5",
+      "mrplaguewarper:warp_6",
+      "mrplaguewarper:fluctuation",
+      "mrplaguewarper:energy_source",
+      "mrplaguewarper:relentless",
+      "mrplaguewarper:adaptive",
+      "mrplaguewarper:overworld_adapt",
+      "mrplaguewarper:nether_adapt",
+      "mrplaguewarper:end_adapt",
+      "mrplaguewarper:drifter",
+      "mrplaguewarper:warping_form",
+      "mrplaguewarper:particle",
+      "mrplaguewarper:scale",
+      "mrplaguewarper:sounds",
+      "mrplaguewarper:signal_interference"
+  ]
+}

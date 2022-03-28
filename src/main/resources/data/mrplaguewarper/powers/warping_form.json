@@ -1,0 +1,105 @@
+{
+    "type": "origins:multiple",
+	"name": "Warping Form",
+	"description": "Your body bends and twists under pressure. You are smaller, health and attack speed are reduced, and armor drains with health.",
+    "health_decrease": {
+        "type": "origins:attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.max_health",
+            "value": -6,
+            "operation": "addition"
+        }
+    },
+    "attack_speed_decrease": {
+        "type": "origins:attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.attack_speed",
+            "value": -0.6,
+            "operation": "addition"
+        }
+    },
+    "armor_drain_1": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.armor",
+            "value": -1,
+            "operation": "addition"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:health",
+            "comparison": "<",
+            "compare_to": 14
+        }
+    },
+    "armor_drain_2": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.armor",
+            "value": -1,
+            "operation": "addition"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:health",
+            "comparison": "<",
+            "compare_to": 12
+        }
+    },
+    "armor_drain_3": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.armor",
+            "value": -1,
+            "operation": "addition"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:health",
+            "comparison": "<",
+            "compare_to": 10
+        }
+    },
+    "armor_drain_4": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.armor",
+            "value": -1,
+            "operation": "addition"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:health",
+            "comparison": "<",
+            "compare_to": 8
+        }
+    },
+    "armor_drain_5": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.armor",
+            "value": -1,
+            "operation": "addition"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:health",
+            "comparison": "<",
+            "compare_to": 6
+        }
+    },
+    "armor_drain_6": {
+        "type": "origins:conditioned_attribute",
+        "modifier": {
+            "attribute": "minecraft:generic.armor",
+            "value": -1,
+            "operation": "addition"
+        },
+        "tick_rate": 20,
+        "condition": {
+            "type": "origins:health",
+            "comparison": "<",
+            "compare_to": 4
+        }
+    }
+}

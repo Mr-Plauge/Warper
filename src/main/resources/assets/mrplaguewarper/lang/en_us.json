@@ -1,0 +1,20 @@
+{
+    "death.attack.fluctuation": "%1$s experienced a fluctuation in energy",
+    "death.attack.fluctuation.player": "%1$s experienced a fluctuation in energy while fighting %2$s",
+    "death.attack.fluctuation.player.item": "%1$s experienced a fluctuation in energy while fighting %2$s using %3$s",
+
+    "subtitles.mrplaguewarper.warper.arrive": "Warper arrives",
+    "subtitles.mrplaguewarper.warper.cleave": "Warper cleaves",
+    "subtitles.mrplaguewarper.warper.crackle": "Warper crackles",
+    "subtitles.mrplaguewarper.warper.hurt": "Warper hurts",
+    "subtitles.mrplaguewarper.warper.idle": "Warper warbles",
+    "subtitles.mrplaguewarper.warper.killed": "Warper dies",
+    "subtitles.mrplaguewarper.warper.relocate": "Warper relocates",
+    "subtitles.mrplaguewarper.warper.reorient": "Warper reorients",
+    "subtitles.mrplaguewarper.warper.retreat": "Warper reels",
+    "subtitles.mrplaguewarper.warper.transmit": "Warper transmits",
+    "subtitles.mrplaguewarper.warper.warp": "Warper warps",
+
+    "effect.mrplaguewarper.imminence": "Imminence",
+    "effect.mrplaguewarper.overloading": "Overloading"
+}

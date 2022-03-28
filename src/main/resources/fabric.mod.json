@@ -1,0 +1,39 @@
+{
+  "schemaVersion": 1,
+  "id": "mrplaguewarper",
+  "version": "${version}",
+
+  "name": "MrPlague's Warper Origin",
+  "description": "Datapacks alone weren't enough, so I made Warper into a fabric mod!",
+  "authors": [
+    "MrPlague"
+  ],
+  "contact": {
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/mrplagues-warper-origin/",
+    "issues": "https://github.com/Mr-Plauge/Warper/issues",
+    "sources": "https://github.com/Mr-Plauge/Warper"
+  },
+
+  "license": "MIT",
+  "icon": "assets/mrplaguewarper/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "io.github.mrplague.MrPlagueWarper"
+    ],
+    "client": [
+      "io.github.mrplague.MrPlagueWarperClient"
+    ]
+  },
+  "mixins": [
+    "mrplaguewarper.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.13.3",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  }
+}
