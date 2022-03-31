@@ -1,7 +1,7 @@
 {
     "type": "origins:multiple",
 	"name": "Warp Network",
-	"description": "Press your secondary ability key to toggle warp network access. When access is enabled, enter interdimensional sight and press hotbar keys 1-6 to set warp points. Exit interdimensional influence and press hotbar keys 1-6 to teleport to your warp points. Warp points have a range of 900 blocks, and erase themselves when you close your client.",
+	"description": "Press your secondary ability key to toggle warp network. When enabled, enter interdimensional sight and press hotbar keys 1-6 to set warp points. Exit interdimensional influence and press hotbar keys 1-6 to teleport to your warp points. Warp points have a range of 900 blocks, and erase themselves when you close your client.",
     "toggle": {
         "type": "origins:active_self",
         "entity_action": {
