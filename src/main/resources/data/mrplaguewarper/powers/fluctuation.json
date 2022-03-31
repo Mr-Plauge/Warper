@@ -185,20 +185,5 @@
             "type": "origins:status_effect",
             "effect": "mrplaguewarper:imminence"
         }
-    },
-    "charge_self": {
-        "type": "origins:self_action_on_hit",
-        "entity_action": {
-            "type": "origins:clear_effect",
-            "effect": "mrplaguewarper:imminence"
-        },
-        "cooldown": 1,
-        "hud_render": {
-            "should_render": false
-        },
-        "condition": {
-            "type": "origins:status_effect",
-            "effect": "mrplaguewarper:imminence"
-        }
     }
 }
