@@ -1,10 +1,10 @@
 package io.github.mrplague.status_effect;
 
 import net.minecraft.entity.effect.StatusEffect;
-import net.minecraft.entity.effect.StatusEffectCategory;
+import net.minecraft.entity.effect.StatusEffectType;
 
 public class ImminenceStatusEffect extends StatusEffect {
     public ImminenceStatusEffect() {
-        super(StatusEffectCategory.BENEFICIAL, 0xF0AF7A);
+        super(StatusEffectType.BENEFICIAL, 0xF0AF7A);
     }
 }
