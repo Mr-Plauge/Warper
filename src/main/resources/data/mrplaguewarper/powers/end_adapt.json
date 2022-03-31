@@ -1,11 +1,11 @@
 {
     "type": "origins:multiple",
     "hidden": true,
-    "air_speed": {
-        "type": "origins:modify_air_speed",
+    "attack_damage_increase": {
+        "type": "origins:modify_damage_dealt",
         "modifier": {
-            "operation": "multiply_total",
-            "value": 1.05
+            "operation": "addition",
+            "value": 6
         },
         "condition": {
             "type": "origins:resource",

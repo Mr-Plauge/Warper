@@ -1,7 +1,7 @@
 {
     "type": "origins:multiple",
 	"name": "Adaptive",
-	"description": "Your body quickly evolves to fit your current dimension. Staying in the overworld increases walking and swimming speeds, but increases hunger drain and fire damage. Staying in the nether increases mining speed and fire resistance, but increases damage taken, makes water damaging, and restricts your diet to meat. Staying in the end increases air speed and fall resistance, but reduces mining speed, makes both fire and water more harmful, and limits your diet to plants.",
+	"description": "Your body quickly evolves to fit your current dimension. Staying in the overworld increases walking and swimming speeds, but increases hunger drain and fire damage. Staying in the nether increases mining speed and fire resistance, but increases damage taken, makes water damaging, and restricts your diet to meat. Staying in the end increases attack damage and fall resistance, but reduces mining speed, makes both fire and water more harmful, and limits your diet to plants.",
     "dimension_bar": {
         "type": "origins:resource",
         "min": 0,
