@@ -143,11 +143,11 @@ public class ModPacketsS2C {
             double multZ;
             if (MrPlagueWarperClient.cameraEntity != null) {
                 if (bufInt == 1) {
-                    MrPlagueWarperClient.warp1_x = MrPlagueWarperClient.cameraEntity.getBlockX() + (int)MrPlagueWarperClient.cameraEntity.getMultX();
-                    MrPlagueWarperClient.warp1_y = MrPlagueWarperClient.cameraEntity.getBlockY();
-                    MrPlagueWarperClient.warp1_z = MrPlagueWarperClient.cameraEntity.getBlockZ() + (int)MrPlagueWarperClient.cameraEntity.getMultZ();
-                    MrPlagueWarperClient.warp1_yaw = MrPlagueWarperClient.cameraEntity.getYaw();
-                    MrPlagueWarperClient.warp1_pitch = MrPlagueWarperClient.cameraEntity.getPitch();
+                    MrPlagueWarperClient.warp1_x = MrPlagueWarperClient.cameraEntity.getBlockPos().getX() + (int)MrPlagueWarperClient.cameraEntity.getMultX();
+                    MrPlagueWarperClient.warp1_y = MrPlagueWarperClient.cameraEntity.getBlockPos().getY();
+                    MrPlagueWarperClient.warp1_z = MrPlagueWarperClient.cameraEntity.getBlockPos().getZ() + (int)MrPlagueWarperClient.cameraEntity.getMultZ();
+                    MrPlagueWarperClient.warp1_yaw = MrPlagueWarperClient.cameraEntity.getYaw(0);
+                    MrPlagueWarperClient.warp1_pitch = MrPlagueWarperClient.cameraEntity.getPitch(0);
                     if (MrPlagueWarperClient.viewed_dim == 1) {
                         MrPlagueWarperClient.warp1_dim = 1;
                     }
@@ -160,11 +160,11 @@ public class ModPacketsS2C {
                     minecraftClient.player.sendMessage(Text.of("Warp point 1 set"), true);
                 }
                 else if (bufInt == 2) {
-                    MrPlagueWarperClient.warp2_x = MrPlagueWarperClient.cameraEntity.getBlockX() + (int)MrPlagueWarperClient.cameraEntity.getMultX();
-                    MrPlagueWarperClient.warp2_y = MrPlagueWarperClient.cameraEntity.getBlockY();
-                    MrPlagueWarperClient.warp2_z = MrPlagueWarperClient.cameraEntity.getBlockZ() + (int)MrPlagueWarperClient.cameraEntity.getMultZ();
-                    MrPlagueWarperClient.warp2_yaw = MrPlagueWarperClient.cameraEntity.getYaw();
-                    MrPlagueWarperClient.warp2_pitch = MrPlagueWarperClient.cameraEntity.getPitch();
+                    MrPlagueWarperClient.warp2_x = MrPlagueWarperClient.cameraEntity.getBlockPos().getX() + (int)MrPlagueWarperClient.cameraEntity.getMultX();
+                    MrPlagueWarperClient.warp2_y = MrPlagueWarperClient.cameraEntity.getBlockPos().getY();
+                    MrPlagueWarperClient.warp2_z = MrPlagueWarperClient.cameraEntity.getBlockPos().getZ() + (int)MrPlagueWarperClient.cameraEntity.getMultZ();
+                    MrPlagueWarperClient.warp2_yaw = MrPlagueWarperClient.cameraEntity.getYaw(0);
+                    MrPlagueWarperClient.warp2_pitch = MrPlagueWarperClient.cameraEntity.getPitch(0);
                     if (MrPlagueWarperClient.viewed_dim == 1) {
                         MrPlagueWarperClient.warp2_dim = 1;
                     }
@@ -177,11 +177,11 @@ public class ModPacketsS2C {
                     minecraftClient.player.sendMessage(Text.of("Warp point 2 set"), true);
                 }
                 else if (bufInt == 3) {
-                    MrPlagueWarperClient.warp3_x = MrPlagueWarperClient.cameraEntity.getBlockX() + (int)MrPlagueWarperClient.cameraEntity.getMultX();
-                    MrPlagueWarperClient.warp3_y = MrPlagueWarperClient.cameraEntity.getBlockY();
-                    MrPlagueWarperClient.warp3_z = MrPlagueWarperClient.cameraEntity.getBlockZ() + (int)MrPlagueWarperClient.cameraEntity.getMultZ();
-                    MrPlagueWarperClient.warp3_yaw = MrPlagueWarperClient.cameraEntity.getYaw();
-                    MrPlagueWarperClient.warp3_pitch = MrPlagueWarperClient.cameraEntity.getPitch();
+                    MrPlagueWarperClient.warp3_x = MrPlagueWarperClient.cameraEntity.getBlockPos().getX() + (int)MrPlagueWarperClient.cameraEntity.getMultX();
+                    MrPlagueWarperClient.warp3_y = MrPlagueWarperClient.cameraEntity.getBlockPos().getY();
+                    MrPlagueWarperClient.warp3_z = MrPlagueWarperClient.cameraEntity.getBlockPos().getZ() + (int)MrPlagueWarperClient.cameraEntity.getMultZ();
+                    MrPlagueWarperClient.warp3_yaw = MrPlagueWarperClient.cameraEntity.getYaw(0);
+                    MrPlagueWarperClient.warp3_pitch = MrPlagueWarperClient.cameraEntity.getPitch(0);
                     if (MrPlagueWarperClient.viewed_dim == 1) {
                         MrPlagueWarperClient.warp3_dim = 1;
                     }
@@ -194,11 +194,11 @@ public class ModPacketsS2C {
                     minecraftClient.player.sendMessage(Text.of("Warp point 3 set"), true);
                 }
                 else if (bufInt == 4) {
-                    MrPlagueWarperClient.warp4_x = MrPlagueWarperClient.cameraEntity.getBlockX() + (int)MrPlagueWarperClient.cameraEntity.getMultX();
-                    MrPlagueWarperClient.warp4_y = MrPlagueWarperClient.cameraEntity.getBlockY();
-                    MrPlagueWarperClient.warp4_z = MrPlagueWarperClient.cameraEntity.getBlockZ() + (int)MrPlagueWarperClient.cameraEntity.getMultZ();
-                    MrPlagueWarperClient.warp4_yaw = MrPlagueWarperClient.cameraEntity.getYaw();
-                    MrPlagueWarperClient.warp4_pitch = MrPlagueWarperClient.cameraEntity.getPitch();
+                    MrPlagueWarperClient.warp4_x = MrPlagueWarperClient.cameraEntity.getBlockPos().getX() + (int)MrPlagueWarperClient.cameraEntity.getMultX();
+                    MrPlagueWarperClient.warp4_y = MrPlagueWarperClient.cameraEntity.getBlockPos().getY();
+                    MrPlagueWarperClient.warp4_z = MrPlagueWarperClient.cameraEntity.getBlockPos().getZ() + (int)MrPlagueWarperClient.cameraEntity.getMultZ();
+                    MrPlagueWarperClient.warp4_yaw = MrPlagueWarperClient.cameraEntity.getYaw(0);
+                    MrPlagueWarperClient.warp4_pitch = MrPlagueWarperClient.cameraEntity.getPitch(0);
                     if (MrPlagueWarperClient.viewed_dim == 1) {
                         MrPlagueWarperClient.warp4_dim = 1;
                     }
@@ -211,11 +211,11 @@ public class ModPacketsS2C {
                     minecraftClient.player.sendMessage(Text.of("Warp point 4 set"), true);
                 }
                 else if (bufInt == 5) {
-                    MrPlagueWarperClient.warp5_x = MrPlagueWarperClient.cameraEntity.getBlockX() + (int)MrPlagueWarperClient.cameraEntity.getMultX();
-                    MrPlagueWarperClient.warp5_y = MrPlagueWarperClient.cameraEntity.getBlockY();
-                    MrPlagueWarperClient.warp5_z = MrPlagueWarperClient.cameraEntity.getBlockZ() + (int)MrPlagueWarperClient.cameraEntity.getMultZ();
-                    MrPlagueWarperClient.warp5_yaw = MrPlagueWarperClient.cameraEntity.getYaw();
-                    MrPlagueWarperClient.warp5_pitch = MrPlagueWarperClient.cameraEntity.getPitch();
+                    MrPlagueWarperClient.warp5_x = MrPlagueWarperClient.cameraEntity.getBlockPos().getX() + (int)MrPlagueWarperClient.cameraEntity.getMultX();
+                    MrPlagueWarperClient.warp5_y = MrPlagueWarperClient.cameraEntity.getBlockPos().getY();
+                    MrPlagueWarperClient.warp5_z = MrPlagueWarperClient.cameraEntity.getBlockPos().getZ() + (int)MrPlagueWarperClient.cameraEntity.getMultZ();
+                    MrPlagueWarperClient.warp5_yaw = MrPlagueWarperClient.cameraEntity.getYaw(0);
+                    MrPlagueWarperClient.warp5_pitch = MrPlagueWarperClient.cameraEntity.getPitch(0);
                     if (MrPlagueWarperClient.viewed_dim == 1) {
                         MrPlagueWarperClient.warp5_dim = 1;
                     }
@@ -228,11 +228,11 @@ public class ModPacketsS2C {
                     minecraftClient.player.sendMessage(Text.of("Warp point 5 set"), true);
                 }
                 else if (bufInt == 6) {
-                    MrPlagueWarperClient.warp6_x = MrPlagueWarperClient.cameraEntity.getBlockX() + (int)MrPlagueWarperClient.cameraEntity.getMultX();
-                    MrPlagueWarperClient.warp6_y = MrPlagueWarperClient.cameraEntity.getBlockY();
-                    MrPlagueWarperClient.warp6_z = MrPlagueWarperClient.cameraEntity.getBlockZ() + (int)MrPlagueWarperClient.cameraEntity.getMultZ();
-                    MrPlagueWarperClient.warp6_yaw = MrPlagueWarperClient.cameraEntity.getYaw();
-                    MrPlagueWarperClient.warp6_pitch = MrPlagueWarperClient.cameraEntity.getPitch();
+                    MrPlagueWarperClient.warp6_x = MrPlagueWarperClient.cameraEntity.getBlockPos().getX() + (int)MrPlagueWarperClient.cameraEntity.getMultX();
+                    MrPlagueWarperClient.warp6_y = MrPlagueWarperClient.cameraEntity.getBlockPos().getY();
+                    MrPlagueWarperClient.warp6_z = MrPlagueWarperClient.cameraEntity.getBlockPos().getZ() + (int)MrPlagueWarperClient.cameraEntity.getMultZ();
+                    MrPlagueWarperClient.warp6_yaw = MrPlagueWarperClient.cameraEntity.getYaw(0);
+                    MrPlagueWarperClient.warp6_pitch = MrPlagueWarperClient.cameraEntity.getPitch(0);
                     if (MrPlagueWarperClient.viewed_dim == 1) {
                         MrPlagueWarperClient.warp6_dim = 1;
                     }

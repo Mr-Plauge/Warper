@@ -2,7 +2,7 @@
 package io.github.mrplague.mixin;
 
 import io.github.mrplague.MrPlagueWarperClient;
-import net.minecraft.client.option.Perspective;
+import net.minecraft.client.options.Perspective;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;

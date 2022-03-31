@@ -1,6 +1,5 @@
 package io.github.mrplague.mixin;
 
-import io.github.mrplague.MrPlagueWarper;
 import io.github.mrplague.MrPlagueWarperClient;
 import net.minecraft.client.input.Input;
 import net.minecraft.client.render.Camera;
@@ -27,13 +26,6 @@ public abstract class CameraMixin {
         }
         else if (MrPlagueWarperClient.enabled && MrPlagueWarperClient.cameraEntity == null) {
             MrPlagueWarperClient.toggle();
-        }
-    }
-
-    @Inject(method = "getSubmersionType", at = @At("HEAD"), cancellable = true)
-    private void getSubmersionType(CallbackInfoReturnable<Boolean> ci) {
-        if (MrPlagueWarperClient.enabled) {
-            ci.setReturnValue(null);
         }
     }
 

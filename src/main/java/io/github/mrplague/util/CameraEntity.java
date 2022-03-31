@@ -1,5 +1,7 @@
 package io.github.mrplague.util;
 
+import com.google.common.cache.RemovalCause;
+import com.google.common.cache.RemovalNotification;
 import com.mojang.authlib.GameProfile;
 import io.github.mrplague.MrPlagueWarper;
 import io.github.mrplague.MrPlagueWarperClient;
@@ -23,7 +25,7 @@ public class CameraEntity extends ClientPlayerEntity {
     double multX;
     double multZ;
 
-    private static final ClientPlayNetworkHandler NETWORK_HANDLER = new ClientPlayNetworkHandler(MC, MC.currentScreen, MC.getNetworkHandler().getConnection(), new GameProfile(UUID.randomUUID(), "FreeCamera"), MC.createTelemetrySender()) {
+    private static final ClientPlayNetworkHandler NETWORK_HANDLER = new ClientPlayNetworkHandler(MC, MC.currentScreen, MC.getNetworkHandler().getConnection(), new GameProfile(UUID.randomUUID(), "FreeCamera")) {
         @Override
         public void sendPacket(Packet<?> packet) {
         }
@@ -33,20 +35,20 @@ public class CameraEntity extends ClientPlayerEntity {
         super(MC, MC.world, NETWORK_HANDLER, MC.player.getStatHandler(), MC.player.getRecipeBook(), false, false);
 
         copyPositionAndRotation(MC.player);
-        this.getAbilities().allowModifyWorld = false;
+        this.abilities.allowModifyWorld = false;
         this.noClip = true;
         this.input = new KeyboardInput(MC.options);
     }
 
     public void spawn() {
         if (clientWorld != null) {
-            clientWorld.addEntity(getId(), this);
+            clientWorld.addEntity(getEntityId(), this);
         }
     }
 
     public void despawn() {
-        if (clientWorld != null && clientWorld.getEntityById(getId()) != null) {
-            clientWorld.removeEntity(getId(), RemovalReason.DISCARDED);
+        if (clientWorld != null && clientWorld.getEntityById(getEntityId()) != null) {
+            clientWorld.removeEntity(getEntityId());
         }
     }
 
@@ -146,8 +148,8 @@ public class CameraEntity extends ClientPlayerEntity {
 
     @Override
     public void tickMovement() {
-        this.getAbilities().flying = true;
-        this.getAbilities().setFlySpeed((float)0.05);
+        this.abilities.flying = true;
+        this.abilities.setFlySpeed((float)0.05);
         super.tickMovement();
     }
 

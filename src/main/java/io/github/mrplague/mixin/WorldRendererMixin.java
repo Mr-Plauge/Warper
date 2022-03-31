@@ -12,15 +12,15 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(WorldRenderer.class)
 public abstract class WorldRendererMixin{
-    @Inject(method = "renderSky(Lnet/minecraft/client/util/math/MatrixStack;Lnet/minecraft/util/math/Matrix4f;FLjava/lang/Runnable;)V", at = @At("HEAD"), cancellable = true)
-    private void renderSky(MatrixStack matrices, Matrix4f projectionMatrix, float tickDelta, Runnable runnable, CallbackInfo ci){
+    @Inject(method = "renderSky", at = @At("HEAD"), cancellable = true)
+    private void renderSky(MatrixStack matrices, float tickDelta, CallbackInfo ci){
         if (MrPlagueWarperClient.enabled) {
             ci.cancel();
         }
     }
 
     @Inject(method = "renderClouds", at = @At("HEAD"), cancellable = true)
-    public void renderClouds(MatrixStack matrices, Matrix4f projectionMatrix, float tickDelta, double d, double e, double f, CallbackInfo ci) {
+    public void renderClouds(MatrixStack matrices, float tickDelta, double cameraX, double cameraY, double cameraZ, CallbackInfo ci) {
         if (MrPlagueWarperClient.enabled) {
             ci.cancel();
         }

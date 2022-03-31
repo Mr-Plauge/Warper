@@ -9,8 +9,7 @@
                 {
                     "type": "origins:change_resource",
                     "resource": "mrplaguewarper:warp_6_bar",
-                    "change": 20,
-                    "operation": "set"
+                    "change": 20
                 },
                 {
                     "type": "mrplaguewarper:indexed_sound",

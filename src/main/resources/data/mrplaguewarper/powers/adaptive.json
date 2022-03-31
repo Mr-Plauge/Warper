@@ -61,10 +61,19 @@
                                             "dimension": "minecraft:overworld"
                                         },
                                         "action": {
-                                            "type": "origins:change_resource",
-                                            "resource": "mrplaguewarper:adaptive_dimension_bar",
-                                            "change": 1,
-                                            "operation": "set"
+                                            "type": "origins:and",
+                                            "actions": [
+                                                {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "mrplaguewarper:adaptive_dimension_bar",
+                                                    "change": -3
+                                                },
+                                                {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "mrplaguewarper:adaptive_dimension_bar",
+                                                    "change": 1
+                                                }
+                                            ]
                                         }
                                     },
                                     {
@@ -73,10 +82,19 @@
                                             "dimension": "minecraft:the_nether"
                                         },
                                         "action": {
-                                            "type": "origins:change_resource",
-                                            "resource": "mrplaguewarper:adaptive_dimension_bar",
-                                            "change": 2,
-                                            "operation": "set"
+                                            "type": "origins:and",
+                                            "actions": [
+                                                {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "mrplaguewarper:adaptive_dimension_bar",
+                                                    "change": -3
+                                                },
+                                                {
+                                                    "type": "origins:change_resource",
+                                                    "resource": "mrplaguewarper:adaptive_dimension_bar",
+                                                    "change": 2
+                                                }
+                                            ]
                                         }
                                     },
                                     {
@@ -87,8 +105,7 @@
                                         "action": {
                                             "type": "origins:change_resource",
                                             "resource": "mrplaguewarper:adaptive_dimension_bar",
-                                            "change": 3,
-                                            "operation": "set"
+                                            "change": 3
                                         }
                                     }
                                 ]

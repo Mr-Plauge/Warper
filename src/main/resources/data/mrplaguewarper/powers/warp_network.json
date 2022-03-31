@@ -22,8 +22,7 @@
                     {
                         "type": "origins:change_resource",
                         "resource": "mrplaguewarper:warp_network_bar",
-                        "change": 0,
-                        "operation": "set"
+                        "change": -1
                     }
                 ]
             },
@@ -37,8 +36,7 @@
                     {
                         "type": "origins:change_resource",
                         "resource": "mrplaguewarper:warp_network_bar",
-                        "change": 1,
-                        "operation": "set"
+                        "change": 1
                     }
                 ]
             }

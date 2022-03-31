@@ -33,10 +33,6 @@
                     "inverted": true
                 },
                 {
-                    "type": "origins:creative_flying",
-                    "inverted": true
-                },
-                {
                     "type": "origins:gamemode",
                     "gamemode": "spectator",
                     "inverted": true
@@ -72,10 +68,6 @@
                 },
                 {
                     "type": "origins:fall_flying",
-                    "inverted": true
-                },
-                {
-                    "type": "origins:creative_flying",
                     "inverted": true
                 },
                 {
@@ -132,20 +124,17 @@
                 {      
                     "type": "origins:change_resource",
                     "resource": "mrplaguewarper:relentless_slide_cooldown_bar",
-                    "change": 0,
-                    "operation": "set"
+                    "change": -1
                 },
                 {      
                     "type": "origins:change_resource",
                     "resource": "mrplaguewarper:relentless_slide_display_bar",
-                    "change": 0,
-                    "operation": "set"
+                    "change": -40
                 },
                 {      
                     "type": "origins:change_resource",
                     "resource": "mrplaguewarper:relentless_slide_bar",
-                    "change": 0,
-                    "operation": "set"
+                    "change": -6
                 }
             ]
         },
@@ -166,10 +155,6 @@
                 },
                 {
                     "type": "origins:fall_flying",
-                    "inverted": true
-                },
-                {
-                    "type": "origins:creative_flying",
                     "inverted": true
                 },
                 {
@@ -295,10 +280,6 @@
                 },
                 {    
                     "type": "origins:fall_flying",
-                    "inverted": true
-                },
-                {         
-                    "type": "origins:creative_flying",
                     "inverted": true
                 },
                 {

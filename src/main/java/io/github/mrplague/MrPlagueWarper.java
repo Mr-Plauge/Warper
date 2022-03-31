@@ -15,6 +15,10 @@ import net.minecraft.util.registry.Registry;
 public class MrPlagueWarper implements ModInitializer {
 	public static final String MODID = "mrplaguewarper";
 
+	public static Identifier identifier(String path) {
+		return new Identifier(MODID, path);
+	}
+
 	public static final SoundEvent WARPER_ARRIVE = new SoundEvent(identifier("warper.arrive"));
 	public static final SoundEvent WARPER_CLEAVE = new SoundEvent(identifier("warper.cleave"));
 	public static final SoundEvent WARPER_CRACKLE = new SoundEvent(identifier("warper.crackle"));
@@ -49,25 +53,21 @@ public class MrPlagueWarper implements ModInitializer {
 	public static final StatusEffect IMMINENCE = new ImminenceStatusEffect();
 	public static final StatusEffect OVERLOADING = new OverloadingStatusEffect();
 
-	public static Identifier identifier(String path) {
-		return new Identifier(MODID, path);
-	}
-
 	@Override
 	public void onInitialize() {
 		MrPlagueWarperEntityActions.register();
 
-		Registry.register(Registry.SOUND_EVENT, WARPER_ARRIVE.getId(), WARPER_ARRIVE);
-		Registry.register(Registry.SOUND_EVENT, WARPER_CLEAVE.getId(), WARPER_CLEAVE);
-		Registry.register(Registry.SOUND_EVENT, WARPER_CRACKLE.getId(), WARPER_CRACKLE);
-		Registry.register(Registry.SOUND_EVENT, WARPER_HURT.getId(), WARPER_HURT);
-		Registry.register(Registry.SOUND_EVENT, WARPER_IDLE.getId(), WARPER_IDLE);
-		Registry.register(Registry.SOUND_EVENT, WARPER_KILLED.getId(), WARPER_KILLED);
-		Registry.register(Registry.SOUND_EVENT, WARPER_RELOCATE.getId(), WARPER_RELOCATE);
-		Registry.register(Registry.SOUND_EVENT, WARPER_REORIENT.getId(), WARPER_REORIENT);
-		Registry.register(Registry.SOUND_EVENT, WARPER_RETREAT.getId(), WARPER_RETREAT);
-		Registry.register(Registry.SOUND_EVENT, WARPER_TRANSMIT.getId(), WARPER_TRANSMIT);
-		Registry.register(Registry.SOUND_EVENT, WARPER_WARP.getId(), WARPER_WARP);
+		Registry.register(Registry.SOUND_EVENT, identifier("warper.arrive"), WARPER_ARRIVE);
+		Registry.register(Registry.SOUND_EVENT, identifier("warper.cleave"), WARPER_CLEAVE);
+		Registry.register(Registry.SOUND_EVENT, identifier("warper.crackle"), WARPER_CRACKLE);
+		Registry.register(Registry.SOUND_EVENT, identifier("warper.hurt"), WARPER_HURT);
+		Registry.register(Registry.SOUND_EVENT, identifier("warper.idle"), WARPER_IDLE);
+		Registry.register(Registry.SOUND_EVENT, identifier("warper.killed"), WARPER_KILLED);
+		Registry.register(Registry.SOUND_EVENT, identifier("warper.relocate"), WARPER_RELOCATE);
+		Registry.register(Registry.SOUND_EVENT, identifier("warper.reorient"), WARPER_REORIENT);
+		Registry.register(Registry.SOUND_EVENT, identifier("warper.retreat"), WARPER_RETREAT);
+		Registry.register(Registry.SOUND_EVENT, identifier("warper.transmit"), WARPER_TRANSMIT);
+		Registry.register(Registry.SOUND_EVENT, identifier("warper.warp"), WARPER_WARP);
 
 		Registry.register(Registry.PARTICLE_TYPE, identifier("overworld_atom"), OVERWORLD_ATOM);
 		Registry.register(Registry.PARTICLE_TYPE, identifier("overworld_atom_reverse"), OVERWORLD_ATOM_REVERSE);
