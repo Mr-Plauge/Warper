@@ -11,6 +11,7 @@ public class MrPlagueWarperEntityActions {
 		register(IndexedSound.getFactory());
 		register(InterdimensionalSightCycle.getFactory());
 		register(InterdimensionalSightToggle.getFactory());
+		register(RenderBlocks.getFactory());
 		register(WarpPoint.getFactory());
 	}
 
