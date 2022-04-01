@@ -12,4 +12,5 @@ public class ModPackets {
     public static final Identifier INDEXED_SOUND = MrPlagueWarper.identifier("indexed_sound");
     public static final Identifier TOGGLE_SIGHT = MrPlagueWarper.identifier("toggle_sight");
     public static final Identifier CYCLE_SIGHT = MrPlagueWarper.identifier("cycle_sight");
+    public static final Identifier RENDER_BLOCKS = MrPlagueWarper.identifier("render_blocks");
 }

@@ -63,6 +63,13 @@
 			]
 		}
 	},
+	"render_blocks": {
+		"type": "origins:action_over_time",
+		"entity_action": {
+			"type": "mrplaguewarper:render_blocks"
+		},
+		"interval": 20
+	},
 	"cycle_forward": {
 		"type": "origins:active_self",
 		"entity_action": {

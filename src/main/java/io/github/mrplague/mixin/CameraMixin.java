@@ -18,7 +18,7 @@ public abstract class CameraMixin {
     @Inject(method = "update", at = @At("HEAD"), cancellable = true)
     private void update(BlockView area, Entity focusedEntity, boolean thirdPerson, boolean inverseView, float tickDelta, CallbackInfo info) {
         if (MrPlagueWarperClient.enabled && MrPlagueWarperClient.cameraEntity != null && MC.player != null) {
-            MrPlagueWarperClient.cameraEntity.cameraRender();
+            MrPlagueWarperClient.cameraEntity.renderWarpPoints();
             MC.player.input = new Input();
             if (MC.player.getX() >= MrPlagueWarperClient.cameraEntity.getX() + 120 || MC.player.getY() >= MrPlagueWarperClient.cameraEntity.getY() + 400 || MC.player.getZ() >= MrPlagueWarperClient.cameraEntity.getZ() + 120 || MC.player.getX() <= MrPlagueWarperClient.cameraEntity.getX() - 120 || MC.player.getY() <= MrPlagueWarperClient.cameraEntity.getY() - 400 || MC.player.getZ() <= MrPlagueWarperClient.cameraEntity.getZ() - 120) {
                 MrPlagueWarperClient.toggle();

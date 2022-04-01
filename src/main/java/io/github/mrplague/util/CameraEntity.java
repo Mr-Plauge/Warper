@@ -60,7 +60,7 @@ public class CameraEntity extends ClientPlayerEntity {
         return multZ;
     }
 
-    public void cameraRender() {
+    public void renderBlocks() {
         if (MrPlagueWarperClient.viewed_dim == 2)
         {
             multX = (client.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID) ? 0 : ((MrPlagueWarperClient.x) / 8 - MrPlagueWarperClient.x));
@@ -84,6 +84,9 @@ public class CameraEntity extends ClientPlayerEntity {
         PacketByteBuf bufDim = PacketByteBufs.create();
         bufDim.writeInt(MrPlagueWarperClient.viewed_dim);
         ClientPlayNetworking.send(ModPackets.SEND_PLAYERPOS, bufDim);
+    }
+
+    public void renderWarpPoints() {
         if (MrPlagueWarperClient.viewed_dim == 1 && MrPlagueWarperClient.enabled && MrPlagueWarperClient.cameraEntity != null) {
             if (warp1_dim == 1) {
                 MC.particleManager.addParticle(MrPlagueWarper.OVERWORLD_WARP, warp1_x - (int)multX + 0.5, warp1_y + 0.5, warp1_z - (int)multZ + 0.5, 0, 0, 0);

@@ -26,6 +26,7 @@ public class ModPacketsS2C {
             ClientPlayNetworking.registerReceiver(ModPackets.TOGGLE_SIGHT, ModPacketsS2C::onToggleSight);
             ClientPlayNetworking.registerReceiver(ModPackets.CYCLE_SIGHT, ModPacketsS2C::onCycleSight);
             ClientPlayNetworking.registerReceiver(ModPackets.INDEXED_SOUND, ModPacketsS2C::onIndexedSound);
+            ClientPlayNetworking.registerReceiver(ModPackets.RENDER_BLOCKS, ModPacketsS2C::onRenderBlocks);
         }));
     }
 
@@ -132,6 +133,12 @@ public class ModPacketsS2C {
             else {
                 MrPlagueWarperClient.cycleLimited();
             }
+        });
+    }
+
+    private static void onRenderBlocks(MinecraftClient minecraftClient, ClientPlayNetworkHandler clientPlayNetworkHandler, PacketByteBuf packetByteBuf, PacketSender packetSender) {
+        minecraftClient.execute(() -> {
+            MrPlagueWarperClient.cameraEntity.renderBlocks();
         });
     }
 
