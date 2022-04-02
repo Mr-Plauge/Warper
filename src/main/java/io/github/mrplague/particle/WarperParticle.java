@@ -13,7 +13,7 @@ public class WarperParticle extends SpriteBillboardParticle {
     WarperParticle(ClientWorld world, double x, double y, double z, double d, SpriteProvider spriteProvider) {
         super(world, x, y, z, 0.0D, 0.0D, 0.0D);
         this.spriteProvider = spriteProvider;
-        this.maxAge = 1;
+        this.maxAge = 30;
         this.scale = 0.5f;
         this.setSpriteForAge(spriteProvider);
     }
