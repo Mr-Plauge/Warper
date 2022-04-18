@@ -1,6 +1,7 @@
 package io.github.mrplague.mixin;
 
 import io.github.mrplague.MrPlagueWarperClient;
+import net.minecraft.block.BlockState;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.block.FluidRenderer;
 import net.minecraft.fluid.FluidState;
@@ -14,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 @Mixin(FluidRenderer.class)
 public class FluidRendererMixin {
     @Inject(at = @At("HEAD"), method = "render", cancellable = true)
-    private void render(BlockRenderView world, BlockPos pos, VertexConsumer vertexConsumer, FluidState state, CallbackInfoReturnable<Boolean> ci) {
+    private void render(BlockRenderView world, BlockPos pos, VertexConsumer vertexConsumer, BlockState blockState, FluidState fluidState, CallbackInfoReturnable<Boolean> ci) {
         if (MrPlagueWarperClient.enabled) {
             ci.setReturnValue(false);
         }
