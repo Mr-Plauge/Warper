@@ -138,7 +138,9 @@ public class ModPacketsS2C {
 
     private static void onRenderBlocks(MinecraftClient minecraftClient, ClientPlayNetworkHandler clientPlayNetworkHandler, PacketByteBuf packetByteBuf, PacketSender packetSender) {
         minecraftClient.execute(() -> {
-            MrPlagueWarperClient.cameraEntity.renderBlocks();
+            if (MrPlagueWarperClient.cameraEntity != null) {
+                MrPlagueWarperClient.cameraEntity.renderBlocks();
+            }
         });
     }
 
