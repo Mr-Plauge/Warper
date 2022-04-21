@@ -19,11 +19,4 @@ public class EntityMixin {
             ci.cancel();
         }
     }
-
-    @Inject(method = "shouldRender(D)Z", at = @At("HEAD"), cancellable = true)
-    private void onShouldRender(CallbackInfoReturnable<Boolean> cir) {
-        if (MrPlagueWarperClient.enabled) {
-            cir.setReturnValue(false);
-        }
-    }
 }
