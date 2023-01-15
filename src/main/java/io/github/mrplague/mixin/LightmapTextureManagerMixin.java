@@ -9,15 +9,17 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 
 import net.minecraft.client.option.GameOptions;
 
+import static io.github.mrplague.MrPlagueWarperClient.MC;
+
 @Mixin(value = LightmapTextureManager.class)
 public class LightmapTextureManagerMixin {
 
-    @Redirect(at = @At(value = "FIELD", target = "Lnet/minecraft/client/option/GameOptions;gamma*:D", opcode = Opcodes.GETFIELD), method = "update(F)V")
-    private double getFieldValue(GameOptions options) {
-        if (MrPlagueWarperClient.enabled) {
-            return 20;
-        } else {
-            return options.gamma;
+    @Redirect(method = "update", at = @At(value = "INVOKE", target = "Ljava/lang/Math;max(FF)F", ordinal = 2))
+    private float max(float a, float b) {
+        float gamma = MC.options.getGamma().getValue().floatValue();
+        if (gamma < 0) {
+            return gamma;
         }
+        return Math.max(a, b);
     }
 }

@@ -6,7 +6,6 @@
   "client": [
     "InGameHudMixin",
     "GameRendererMixin",
-    "LightmapTextureManagerMixin",
     "BackgroundRendererMixin",
     "BlockEntityRenderDispatcherMixin",
     "CameraMixin",

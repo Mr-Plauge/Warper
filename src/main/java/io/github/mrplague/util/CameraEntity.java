@@ -14,6 +14,7 @@ import net.minecraft.network.Packet;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.dimension.DimensionType;
+import net.minecraft.world.dimension.DimensionTypes;
 
 import java.util.UUID;
 
@@ -61,13 +62,13 @@ public class CameraEntity extends ClientPlayerEntity {
     public void renderBlocks() {
         if (MrPlagueWarperClient.viewed_dim == 2)
         {
-            multX = (client.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID) ? 0 : ((MrPlagueWarperClient.x) / 8 - MrPlagueWarperClient.x));
-            multZ = (client.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID) ? 0 : ((MrPlagueWarperClient.z) / 8 - MrPlagueWarperClient.z));
+            multX = (client.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID) ? 0 : ((MrPlagueWarperClient.x) / 8 - MrPlagueWarperClient.x));
+            multZ = (client.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID) ? 0 : ((MrPlagueWarperClient.z) / 8 - MrPlagueWarperClient.z));
         }
         else
         {
-            multX = (client.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID) ? ((MrPlagueWarperClient.x * 8) - MrPlagueWarperClient.x) : 0);
-            multZ = (client.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID) ? ((MrPlagueWarperClient.z * 8) - MrPlagueWarperClient.z) : 0);
+            multX = (client.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID) ? ((MrPlagueWarperClient.x * 8) - MrPlagueWarperClient.x) : 0);
+            multZ = (client.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID) ? ((MrPlagueWarperClient.z * 8) - MrPlagueWarperClient.z) : 0);
         }
         for (int x = -4; x < 5; x++) {
             for (int y = -4; y < 5; y++) {

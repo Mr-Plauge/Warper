@@ -16,6 +16,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.dimension.DimensionType;
+import net.minecraft.world.dimension.DimensionTypes;
 
 public class ModPacketsS2C {
     @Environment(EnvType.CLIENT)
@@ -258,12 +259,12 @@ public class ModPacketsS2C {
             else {
                 if (bufInt == 1 && MrPlagueWarperClient.warp1_dim != 0) {
                     if (MrPlagueWarperClient.warp1_dim == 2) {
-                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID)) ? MrPlagueWarperClient.warp1_x : MrPlagueWarperClient.warp1_x * 8;
-                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID)) ? MrPlagueWarperClient.warp1_z : MrPlagueWarperClient.warp1_z * 8;
+                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID)) ? MrPlagueWarperClient.warp1_x : MrPlagueWarperClient.warp1_x * 8;
+                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID)) ? MrPlagueWarperClient.warp1_z : MrPlagueWarperClient.warp1_z * 8;
                     }
                     else {
-                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID) ? MrPlagueWarperClient.warp1_x / 8 : MrPlagueWarperClient.warp1_x);
-                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID) ? MrPlagueWarperClient.warp1_z / 8 : MrPlagueWarperClient.warp1_z);
+                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID) ? MrPlagueWarperClient.warp1_x / 8 : MrPlagueWarperClient.warp1_x);
+                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID) ? MrPlagueWarperClient.warp1_z / 8 : MrPlagueWarperClient.warp1_z);
                     }
                     if (!(minecraftClient.player.getX() >= multX + 900 || minecraftClient.player.getZ() >= multZ + 900 || minecraftClient.player.getX() <= multX - 900 || minecraftClient.player.getZ() <= multZ - 900)) {
                         bufIndex.writeInt(MrPlagueWarperClient.warp1_dim);
@@ -277,12 +278,12 @@ public class ModPacketsS2C {
                 }
                 else if (bufInt == 2 && MrPlagueWarperClient.warp2_dim != 0) {
                     if (MrPlagueWarperClient.warp2_dim == 2) {
-                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID)) ? MrPlagueWarperClient.warp2_x : MrPlagueWarperClient.warp2_x * 8;
-                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID)) ? MrPlagueWarperClient.warp2_z : MrPlagueWarperClient.warp2_z * 8;
+                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID)) ? MrPlagueWarperClient.warp2_x : MrPlagueWarperClient.warp2_x * 8;
+                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID)) ? MrPlagueWarperClient.warp2_z : MrPlagueWarperClient.warp2_z * 8;
                     }
                     else {
-                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID) ? MrPlagueWarperClient.warp2_x / 8 : MrPlagueWarperClient.warp2_x);
-                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID) ? MrPlagueWarperClient.warp2_z / 8 : MrPlagueWarperClient.warp2_z);
+                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID) ? MrPlagueWarperClient.warp2_x / 8 : MrPlagueWarperClient.warp2_x);
+                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID) ? MrPlagueWarperClient.warp2_z / 8 : MrPlagueWarperClient.warp2_z);
                     }
                     if (!(minecraftClient.player.getX() >= multX + 900 || minecraftClient.player.getZ() >= multZ + 900 || minecraftClient.player.getX() <= multX - 900 || minecraftClient.player.getZ() <= multZ - 900)) {
                         bufIndex.writeInt(MrPlagueWarperClient.warp2_dim);
@@ -296,12 +297,12 @@ public class ModPacketsS2C {
                 }
                 else if (bufInt == 3 && MrPlagueWarperClient.warp3_dim != 0) {
                     if (MrPlagueWarperClient.warp3_dim == 2) {
-                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID)) ? MrPlagueWarperClient.warp3_x : MrPlagueWarperClient.warp3_x * 8;
-                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID)) ? MrPlagueWarperClient.warp3_z : MrPlagueWarperClient.warp3_z * 8;
+                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID)) ? MrPlagueWarperClient.warp3_x : MrPlagueWarperClient.warp3_x * 8;
+                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID)) ? MrPlagueWarperClient.warp3_z : MrPlagueWarperClient.warp3_z * 8;
                     }
                     else {
-                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID) ? MrPlagueWarperClient.warp3_x / 8 : MrPlagueWarperClient.warp3_x);
-                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID) ? MrPlagueWarperClient.warp3_z / 8 : MrPlagueWarperClient.warp3_z);
+                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID) ? MrPlagueWarperClient.warp3_x / 8 : MrPlagueWarperClient.warp3_x);
+                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID) ? MrPlagueWarperClient.warp3_z / 8 : MrPlagueWarperClient.warp3_z);
                     }
                     if (!(minecraftClient.player.getX() >= multX + 900 || minecraftClient.player.getZ() >= multZ + 900 || minecraftClient.player.getX() <= multX - 900 || minecraftClient.player.getZ() <= multZ - 900)) {
                         bufIndex.writeInt(MrPlagueWarperClient.warp3_dim);
@@ -315,12 +316,12 @@ public class ModPacketsS2C {
                 }
                 else if (bufInt == 4 && MrPlagueWarperClient.warp4_dim != 0) {
                     if (MrPlagueWarperClient.warp4_dim == 2) {
-                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID)) ? MrPlagueWarperClient.warp4_x : MrPlagueWarperClient.warp4_x * 8;
-                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID)) ? MrPlagueWarperClient.warp4_z : MrPlagueWarperClient.warp4_z * 8;
+                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID)) ? MrPlagueWarperClient.warp4_x : MrPlagueWarperClient.warp4_x * 8;
+                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID)) ? MrPlagueWarperClient.warp4_z : MrPlagueWarperClient.warp4_z * 8;
                     }
                     else {
-                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID) ? MrPlagueWarperClient.warp4_x / 8 : MrPlagueWarperClient.warp4_x);
-                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID) ? MrPlagueWarperClient.warp4_z / 8 : MrPlagueWarperClient.warp4_z);
+                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID) ? MrPlagueWarperClient.warp4_x / 8 : MrPlagueWarperClient.warp4_x);
+                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID) ? MrPlagueWarperClient.warp4_z / 8 : MrPlagueWarperClient.warp4_z);
                     }
                     if (!(minecraftClient.player.getX() >= multX + 900 || minecraftClient.player.getZ() >= multZ + 900 || minecraftClient.player.getX() <= multX - 900 || minecraftClient.player.getZ() <= multZ - 900)) {
                         bufIndex.writeInt(MrPlagueWarperClient.warp4_dim);
@@ -334,12 +335,12 @@ public class ModPacketsS2C {
                 }
                 else if (bufInt == 5 && MrPlagueWarperClient.warp5_dim != 0) {
                     if (MrPlagueWarperClient.warp5_dim == 2) {
-                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID)) ? MrPlagueWarperClient.warp5_x : MrPlagueWarperClient.warp5_x * 8;
-                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID)) ? MrPlagueWarperClient.warp5_z : MrPlagueWarperClient.warp5_z * 8;
+                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID)) ? MrPlagueWarperClient.warp5_x : MrPlagueWarperClient.warp5_x * 8;
+                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID)) ? MrPlagueWarperClient.warp5_z : MrPlagueWarperClient.warp5_z * 8;
                     }
                     else {
-                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID) ? MrPlagueWarperClient.warp5_x / 8 : MrPlagueWarperClient.warp5_x);
-                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID) ? MrPlagueWarperClient.warp5_z / 8 : MrPlagueWarperClient.warp5_z);
+                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID) ? MrPlagueWarperClient.warp5_x / 8 : MrPlagueWarperClient.warp5_x);
+                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID) ? MrPlagueWarperClient.warp5_z / 8 : MrPlagueWarperClient.warp5_z);
                     }
                     if (!(minecraftClient.player.getX() >= multX + 900 || minecraftClient.player.getZ() >= multZ + 900 || minecraftClient.player.getX() <= multX - 900 || minecraftClient.player.getZ() <= multZ - 900)) {
                         bufIndex.writeInt(MrPlagueWarperClient.warp5_dim);
@@ -353,12 +354,12 @@ public class ModPacketsS2C {
                 }
                 else if (bufInt == 6 && MrPlagueWarperClient.warp6_dim != 0) {
                     if (MrPlagueWarperClient.warp6_dim == 2) {
-                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID)) ? MrPlagueWarperClient.warp6_x : MrPlagueWarperClient.warp6_x * 8;
-                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID)) ? MrPlagueWarperClient.warp6_z : MrPlagueWarperClient.warp6_z * 8;
+                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID)) ? MrPlagueWarperClient.warp6_x : MrPlagueWarperClient.warp6_x * 8;
+                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID)) ? MrPlagueWarperClient.warp6_z : MrPlagueWarperClient.warp6_z * 8;
                     }
                     else {
-                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID) ? MrPlagueWarperClient.warp6_x / 8 : MrPlagueWarperClient.warp6_x);
-                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID) ? MrPlagueWarperClient.warp6_z / 8 : MrPlagueWarperClient.warp6_z);
+                        multX = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID) ? MrPlagueWarperClient.warp6_x / 8 : MrPlagueWarperClient.warp6_x);
+                        multZ = (minecraftClient.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID) ? MrPlagueWarperClient.warp6_z / 8 : MrPlagueWarperClient.warp6_z);
                     }
                     if (!(minecraftClient.player.getX() >= multX + 900 || minecraftClient.player.getZ() >= multZ + 900 || minecraftClient.player.getX() <= multX - 900 || minecraftClient.player.getZ() <= multZ - 900)) {
                         bufIndex.writeInt(MrPlagueWarperClient.warp6_dim);

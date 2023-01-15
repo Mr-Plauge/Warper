@@ -13,7 +13,7 @@ import net.minecraft.client.input.KeyboardInput;
 import net.minecraft.screen.PlayerScreenHandler;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.Text;
-import net.minecraft.world.dimension.DimensionType;
+import net.minecraft.world.dimension.DimensionTypes;
 
 public class MrPlagueWarperClient implements ClientModInitializer {
     public static final MinecraftClient MC = MinecraftClient.getInstance();
@@ -43,11 +43,11 @@ public class MrPlagueWarperClient implements ClientModInitializer {
         x = MC.player.getX();
         y = MC.player.getY();
         z = MC.player.getZ();
-        if (MC.player.world.getRegistryKey().getValue().equals(DimensionType.OVERWORLD_ID)) {
+        if (MC.player.world.getRegistryKey().getValue().equals(DimensionTypes.OVERWORLD_ID)) {
             viewed_dim = 1;
             MC.player.sendMessage(Text.of("Viewing Overworld"), true);
         }
-        else if (MC.player.world.getRegistryKey().getValue().equals(DimensionType.THE_NETHER_ID)) {
+        else if (MC.player.world.getRegistryKey().getValue().equals(DimensionTypes.THE_NETHER_ID)) {
             viewed_dim = 2;
             MC.player.sendMessage(Text.of("Viewing Nether"), true);
         }

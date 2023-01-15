@@ -10,14 +10,15 @@ import net.minecraft.world.BlockRenderView;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(FluidRenderer.class)
 public class FluidRendererMixin {
     @Inject(at = @At("HEAD"), method = "render", cancellable = true)
-    private void render(BlockRenderView world, BlockPos pos, VertexConsumer vertexConsumer, BlockState blockState, FluidState fluidState, CallbackInfoReturnable<Boolean> ci) {
+    private void render(BlockRenderView world, BlockPos pos, VertexConsumer vertexConsumer, BlockState blockState, FluidState fluidState, CallbackInfo ci) {
         if (MrPlagueWarperClient.enabled) {
-            ci.setReturnValue(false);
+            ci.cancel();
         }
     }
 }
